@@ -1,5 +1,5 @@
 <template>
-    <div class="h-[538px] mt-[36px] relative overflow-hidden">
+    <div class="h-[538px] mt-[36px] relative overflow-hidden grid">
         <div :style="'transform: translateX('+ index * -100 +'%);'" ref="images" class="flex h-[100%] w-[100%] transition-transform duration-300 ">
             <slot></slot>
         </div>
