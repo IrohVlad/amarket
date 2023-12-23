@@ -1,5 +1,7 @@
 import {createRouter, createWebHashHistory} from 'vue-router'
 import railwayPage from '../pages/railwayPage/railwayPage.vue'
+import autoPage from '../pages/autoPage/autoPage.vue'
+import seaPage from '../pages/seaPage/seaPage.vue'
 import servicesPage from '../pages/servicesPage/servicesPage.vue'
 import storagePage from '../pages/storagePage/storagePage.vue'
 import customsPage from '../pages/customsPage/customsPage.vue'
@@ -18,7 +20,9 @@ export default createRouter({
         {path: '/', component: home},
         {path: '/about', component: about},
         {path: '/services', component: servicesPage},
+        {path: '/services/auto', component: autoPage},
         {path: '/services/railway', component: railwayPage},
+        {path: '/services/sea', component: seaPage},
         {path: '/services/storage', component: storagePage},
         {path: '/services/customs', component: customsPage},
         {
