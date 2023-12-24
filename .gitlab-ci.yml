@@ -20,4 +20,4 @@ build:
 test:
   stage: test
   script:
-    - docker run frontend npm run dev
+    - docker run frontend
