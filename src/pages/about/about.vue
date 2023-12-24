@@ -2,8 +2,6 @@
 import ReviewCard from "../../components/modules/ReviewCard.vue";
 import Button from "../../components/common/Button.vue";
 import SkillCard from "../../components/modules/SkillCard.vue";
-import Header from "../../widgets/header/header.vue";
-import Footer from '../../widgets/footer/footer.vue';
 
 const reviewItems = [
   {id: 1, title: 'Совершено перевозок', images: 'src/pages/home/assets/images/icons/transportetion.svg', score: 950},
@@ -52,7 +50,6 @@ const skillItems = [
 </script>
 
 <template>
-  <Header/>
   <div class="flex justify-center py-10">
     <div class="flex gap-28">
       <div class="flex flex-col gap-10">
@@ -137,7 +134,6 @@ const skillItems = [
       <img src="../home/assets/images/icons/plus.svg" alt="plus">
     </div>
   </div>
-  <Footer/>
 </template>
 
 <style>

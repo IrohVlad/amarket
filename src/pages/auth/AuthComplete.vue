@@ -1,6 +1,4 @@
 <script setup>
-import Header from "../../widgets/header/header.vue";
-import Footer from '../../widgets/footer/footer.vue';
 import { ref } from "vue";
 
 const user = ref({
@@ -10,7 +8,6 @@ const user = ref({
 </script>
 
 <template>
-  <Header/>
   <div
     class="text-sm py-2 font-medium border border-solid border-[#27357E] bg-[#27357E26] relative left-[920px] rounded-lg text-center w-60 h-10 text-[#212121]"
   >
@@ -104,7 +101,6 @@ const user = ref({
       </div>
     </div>
   </div>
-  <Footer/>
 </template>
 
 <style scoped>

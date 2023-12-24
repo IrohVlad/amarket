@@ -6,3 +6,7 @@
 ._container{
     @apply max-w-[1290px] mx-auto
 }
+
+body {
+    font-family: 'Raleway', sans-serif;
+}

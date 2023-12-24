@@ -1,6 +1,4 @@
 <script setup>
-import Header from "../../widgets/header/header.vue";
-import Footer from '../../widgets/footer/footer.vue';
 import { useRouter } from "vue-router";
 
 const router = useRouter();
@@ -11,7 +9,6 @@ const main = () => {
 </script>
 
 <template>
-  <Header/>
   <div
     class="mobile flex items-center min-h-screen p-4 bg-white lg:justify-center"
   >
@@ -46,7 +43,6 @@ const main = () => {
       </div>
     </div>
   </div>
-  <Footer/>
 </template>
 
 <style scoped>

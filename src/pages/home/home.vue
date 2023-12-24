@@ -2,8 +2,7 @@
 import Button from "../../components/common/Button.vue";
 import SkillCard from "../../components/modules/SkillCard.vue";
 import ReviewCard from "../../components/modules/ReviewCard.vue";
-import Header from "../../widgets/header/header.vue";
-import Footer from '../../widgets/footer/footer.vue';
+import ContactForm from "../../components/modules/ContactForm/ContactForm.vue";
 
 const reviewItems = [
   {id: 1, title: 'Совершено перевозок', images: 'src/pages/home/assets/images/icons/transportetion.svg', score: 950},
@@ -79,7 +78,6 @@ const skillItems = [
 </script>
 
 <template>
-  <Header/>
   <div class="back relative w-full bg-blend-darken bg-no-repeat mb-20">
     <div class="flex justify-start items-center z-10 relative mx-auto w-fit">
       <div class="ml-64 mt-28 flex flex-col gap-6 w-2/5 text-white">
@@ -116,7 +114,8 @@ const skillItems = [
     <div class="transport p-20 flex flex-col gap-16 justify-center">
       <div>
         <h2 class="text-white font-bold text-5xl mb-10">Транспорт</h2>
-        <p class="text-[#E7E7E7]">Услуги по транспортировке гарантируют быстрое и<br/> своевременное прохождение грузов
+        <p class="text-[#E7E7E7]">Услуги по транспортировке гарантируют быстрое и<br/> своевременное прохождение
+          грузов
           через<br/> границы.</p>
       </div>
       <div class="text-white font-bold gap-5 w-96 grid grid-cols-2 items-center">
@@ -212,65 +211,7 @@ const skillItems = [
       </div>
     </div>
   </div>
-  <div class="w-full flex justify-center py-40">
-    <div class="flex gap-36">
-      <div class="flex flex-col gap-14">
-        <div class="flex flex-col gap-8">
-          <h2 class="text-4xl font-bold">Оставайтесь на связи</h2>
-          <p class="text-[#6C6C6C]">Свяжитесь с нами напрямую по телефону или заполните форму,<br/> чтобы получить бесплатную консультацию от нашего
-            персонала.</p>
-        </div>
-        <div class="flex flex-col gap-5">
-          <div class="flex flex-col gap-2">
-            <div class="flex gap-3">
-              <img src="./assets/images/icons/contacts/phone.svg" alt="phone">
-              <span class="text-[#6C6C6C]">Номер телефона</span>
-            </div>
-            <div>
-              <span class="text-2xl font-bold">+7 (495) 885 71 35</span>
-            </div>
-          </div>
-          <div class="flex flex-col gap-2">
-            <div class="flex gap-3">
-              <img src="./assets/images/icons/contacts/email.svg" alt="email">
-              <span class="text-[#6C6C6C]">Email</span>
-            </div>
-            <div>
-              <span class="font-bold">hello@cargopro.ru</span>
-            </div>
-          </div>
-          <div class="flex flex-col gap-2">
-            <div class="flex gap-3">
-              <img src="./assets/images/icons/contacts/place.svg" alt="place">
-              <span class="text-[#6C6C6C]">Адрес</span>
-            </div>
-            <div>
-              <span class="font-bold">ТЦ АВИАПАРК, 1 ЭТАЖ</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="flex flex-col gap-14 pt-10">
-        <div class="flex gap-2 items-center">
-          <img src="./assets/images/icons/contacts/package.svg" alt="package">
-          <h3 class="font-bold text-xl">Напишите нам</h3>
-        </div>
-        <form class="form flex flex-col gap-8">
-          <input class="outline-none border-b border-gray-400" placeholder="Полное имя" type="text">
-          <input class="outline-none border-b border-gray-400" placeholder="Номер телефона" type="text">
-          <input class="outline-none border-b border-gray-400" placeholder="Email адрес" type="text">
-          <textarea class="h-16 mb-4 outline-none resize-none border-b border-gray-400" placeholder="Сообщение" />
-          <div>
-            <Button button-classes="flex items-center gap-3">
-              <img src="./assets/images/icons/send.svg" alt="">
-              <span>Отправить</span>
-            </Button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-  <Footer/>
+  <ContactForm/>
 </template>
 
 <style>
@@ -299,6 +240,7 @@ const skillItems = [
   flex-basis: 58%;
   height: 703px;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .review {

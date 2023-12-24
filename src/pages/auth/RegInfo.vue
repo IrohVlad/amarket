@@ -1,8 +1,6 @@
 <script setup>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import Header from "../../widgets/header/header.vue";
-import Footer from '../../widgets/footer/footer.vue';
 
 const isCheckedConf = ref(false);
 const isCheckedRemember = ref(false);
@@ -15,7 +13,6 @@ const next = () => {
 </script>
 
 <template>
-  <Header/>
   <div
     class="mobile flex items-center min-h-screen p-4 bg-white lg:justify-center"
   >
@@ -122,7 +119,6 @@ const next = () => {
       </div>
     </div>
   </div>
-  <Footer/>
 </template>
 
 <style scoped>

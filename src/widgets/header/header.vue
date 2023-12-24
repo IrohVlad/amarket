@@ -29,7 +29,7 @@
             <router-link active-class="text-black" to="/services">Услуги</router-link>
           </li>
           <li class=" mr-12 hover:text-black transition-colors duration-300 cursor-pointer">
-            <router-link active-class="text-black" to="#">Контакты</router-link>
+            <router-link active-class="text-black" to="/contacts">Контакты</router-link>
           </li>
           <li class=" hover:text-black transition-colors duration-300 cursor-pointer">
             <router-link active-class="text-black" to="#">Блог</router-link>

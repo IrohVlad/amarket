@@ -1,8 +1,6 @@
 <script setup>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import Header from "../../widgets/header/header.vue";
-import Footer from '../../widgets/footer/footer.vue';
 
 const user = ref({
   name: "",
@@ -30,7 +28,6 @@ const goToComplete = () => {
 </script>
 
 <template>
-  <Header/>
   <div
     class="mobile flex items-center min-h-screen p-4 bg-white lg:justify-center"
   >
@@ -119,7 +116,6 @@ const goToComplete = () => {
       </div>
     </div>
   </div>
-  <Footer/>
 </template>
 
 <style scoped>

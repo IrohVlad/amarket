@@ -1,6 +1,5 @@
 <template>
-<Header/>
-<main class=" font-raleway">
+<main class="font-raleway">
     <Hero :routes="['Главная', 'Услуги', 'Железнодорожные перевозки']" title="Железнодорожные перевозки"><img class=" absolute top-0 left-0 w-[100%] h-[100%] object-center object-cover" src="./assets/aerial-view-of-colorful-freight-trains-2022-02-02-05-05-43-utc.png" alt=""></Hero>
     <div class="_container grid grid-cols-[345px_1fr] mt-[120px] relative">
         <div>
@@ -37,15 +36,12 @@
     </div>
     <Trucks/>
 </main>
-<Footer/>
 </template>
 
 <script setup>
-import Header from '../../widgets/header/header.vue'
 import Hero from '../../widgets/hero/hero.vue';
 import Sidebar from '../../features/servicesSidebar/servicesSidebar.vue';
 import Trucks from '../../widgets/trucks/trucks.vue';
-import Footer from '../../widgets/footer/footer.vue'
 import Slider from '../../entities/slider/slider.vue';
 import Paragraph from '../../shared/paragraph/paragraph.vue'
 import Button from '../../shared/button/button.vue';
