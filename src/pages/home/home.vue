@@ -193,7 +193,7 @@ const skillItems = [
               </div>
               <div class="border-r-2"></div>
               <div class="flex items-center gap-2 mr-5">
-                <img src="./assets/images/icons/time-сircle.svg" alt="time">
+                <img src="./assets/images/icons/encirclement.svg" alt="time">
                 <span class="text-[#6C6C6C]">{{ item.data.day }}, {{ item.data.month }} {{ item.data.year }}</span>
               </div>
             </div>
