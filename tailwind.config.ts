@@ -15,7 +15,7 @@ const config: Config = {
     },
     fontFamily: {
       text: ['Inter', 'sans-serif'],
-      title: ['Railway', 'serif'],
+      title: ['Raleway', 'serif'],
     },
     fontSize: {
       sm: ['14px', {
