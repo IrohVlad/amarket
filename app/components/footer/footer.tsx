@@ -1,109 +1,89 @@
+'use client'
 import Link from 'next/link'
 import Image from 'next/image'
+import {SetStateAction, useState} from 'react';
 
 const Footer = () => {
-	return (
-		<footer className='bg-[#2B2B2B]'>
-			<div className='_container h-[439px] py-[41px] flex flex-col justify-between max-w-c-full m-auto w-full'>
-				<div className='flex items-center justify-between'>
-					<div>
-						<div className='h-[30px] w-[150px] mb-2'>
-							<Image
-								className='h-full w-full'
-								src='/logo.svg'
-								alt='Asiafy'
-								width={110}
-								height={23}
-							/>
-						</div>
-						<div className=' mb-[29px] font-bold text-lg text-white'>
-							ASIAFY
-						</div>
-						<div className=' font-semibold text-lg text-white mb-1'>
-							Подпишитесь на рассылку
-						</div>
-						<div className=' mb-4 font-medium text-[#D7D7D7] text-base'>
-							Мы будем отправлять вам полезную информаю раз в неделю
-						</div>
-						<div className='flex'>
-							<input
-								className=' h-12 w-[280px] rounded-lg px-4 py-3 font-medium text-[16px] mr-4'
-								type='text'
-								placeholder='Ваш email'
-							/>
-							<button>
-								<div className=' font-semibold text-white text-base w-fit'>
-									Отправить
-								</div>
-							</button>
-						</div>
-					</div>
-					<div className='grid grid-cols-[1fr_1fr_1fr] gap-[100px]'>
-						<div>
-							<div className='mb-4 text-white font-semibold text-sm'>
-								Компания
-							</div>
-							<nav>
-								<ul>
-									<li className=' font-medium text-[#AFAFAF] mb-4'>О нас</li>
-									<li className=' font-medium text-[#AFAFAF] mb-4'>Карьера</li>
-									<li className=' font-medium text-[#AFAFAF] mb-4'>Новости</li>
-									<li className=' font-medium text-[#AFAFAF]'>Контакты</li>
-								</ul>
-							</nav>
-						</div>
-						<div>
-							<div className='mb-4 text-white font-semibold text-sm'>
-								Компания
-							</div>
-							<nav>
-								<ul>
-									<li className=' font-medium text-[#AFAFAF] mb-4'>О нас</li>
-									<li className=' font-medium text-[#AFAFAF] mb-4'>Карьера</li>
-									<li className=' font-medium text-[#AFAFAF] mb-4'>Новости</li>
-									<li className=' font-medium text-[#AFAFAF]'>Контакты</li>
-								</ul>
-							</nav>
-						</div>
-						<div>
-							<div className='mb-4 text-white font-semibold text-sm'>
-								Компания
-							</div>
-							<nav>
-								<ul>
-									<li className=' font-medium text-[#AFAFAF] mb-4'>О нас</li>
-									<li className=' font-medium text-[#AFAFAF] mb-4'>Карьера</li>
-									<li className=' font-medium text-[#AFAFAF] mb-4'>Новости</li>
-									<li className=' font-medium text-[#AFAFAF]'>Контакты</li>
-								</ul>
-							</nav>
-						</div>
-					</div>
-				</div>
-				<div className='p-[20px] border-t border-[#7A7A7A] flex items-center justify-between'>
-					<div className='font-medium text-[#D7D7D7]'>
-						© 2023 ASIAFY. Все права защищены.
-					</div>
-					<div>
-						<ul className='flex'>
-							<li className='mr-6'>
-								<Image src='/logo.svg' alt='123' width={110}
-								height={23}/>
-							</li>
-							<li className='mr-6'>
-								<Image src='/logo.svg' alt='123' width={110}
-								height={23}/>
-							</li>
-							<li>
-								<Image src='/logo.svg' alt='123' width={110}
-								height={23}/>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</footer>
-	)
+    const [email, setEmail] = useState('');
+
+    const handleSubmit = (e: { preventDefault: () => void; }) => {
+        e.preventDefault();
+
+        // Код для отправки формы, например, через API
+
+        // Сброс значения поля email после отправки формы
+        setEmail('');
+    };
+
+    const handleChange = (e: { target: { value: SetStateAction<string>; }; }) => {
+        setEmail(e.target.value);
+    };
+
+    return (
+        <footer className='bg-dark-grey flex flex-col h-96 px-6'>
+            <div className="max-w-c-full m-auto w-full h-4/5 flex flex-col justify-between">
+                <div className="flex justify-between">
+                    <div className="w-1/2">
+                        <Image src="/logo.svg" alt="logo" width={110} height={22}/>
+                        <form onSubmit={handleSubmit} className="flex flex-col pt-7">
+                            <h3 className="text-white font-semibold text-lg pb-2">Подпишитесь на рассылку</h3>
+                            <label htmlFor="email" className="text-base text-t-grey pb-4">Мы будем отправлять вам полезную
+                                информацию раз в неделю</label>
+                            <div className="flex">
+                                <input
+                                    id="email"
+                                    type="email"
+                                    placeholder="Ваш email"
+                                    value={email}
+                                    onChange={handleChange}
+                                    required
+                                    className="outline-none pl-4 h-12 w-72 rounded-lg mr-4"
+                                />
+                                <button type="submit"
+                                        className="bg-red text-white w-36 h-12 rounded-lg font-semibold text-base">Отправить
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div className="flex justify-between text-base text-a-grey w-4/12">
+                        <div className="flex flex-col">
+                            <h4 className="text-white font-semibold pb-4">Компания</h4>
+                            <Link href="/" className="pb-3 hover:text-white"><span>О нас</span></Link>
+                            <Link href="/" className="pb-3 hover:text-white"><span>Карьера</span></Link>
+                            <Link href="/" className="hover:text-white"><span>Контакты</span></Link>
+                        </div>
+                        <div className="flex flex-col">
+                            <h4 className="text-white font-semibold pb-4">Информация</h4>
+                            <Link href="/" className="pb-3 hover:text-white"><span>Правила</span></Link>
+                            <Link href="/" className="pb-3 hover:text-white"><span>Наши работы</span></Link>
+                            <Link href="/" className="hover:text-white"><span>Клиенты</span></Link>
+                        </div>
+                        <div className="flex flex-col">
+                            <h4 className="text-white font-semibold pb-4">Ресурсы</h4>
+                            <Link href="/" className="pb-3 hover:text-white"><span>Блог</span></Link>
+                            <Link href="/" className="pb-3 hover:text-white"><span>Мероприятия</span></Link>
+                            <Link href="/" className="pb-3 hover:text-white"><span>Центр помощи</span></Link>
+                            <Link href="/" className="hover:text-white"><span>Частые вопросы</span></Link>
+                        </div>
+                    </div>
+                </div>
+                <div className="flex justify-between border-t border-a-grey pt-5">
+                    <span className="text-t-grey pl-4">© 2023 ASIAFY. Все права защищены.</span>
+                    <div className="flex w-32 justify-between pr-4">
+                        <Link href="/">
+                            <Image src="/footer/vk.svg" alt="Vk" width="24" height="24"/>
+                        </Link>
+                        <Link href="/">
+                            <Image src="/footer/telegram.svg" alt="Telegram" width="24" height="24"/>
+                        </Link>
+                        <Link href="/">
+                            <Image src="/footer/wechat.svg" alt="WeChat" width="24" height="24"/>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    )
 }
 
 export default Footer
