@@ -43,9 +43,9 @@ const Header = () => {
 									<path
 										d='M10.1666 1.16667L5.49992 5.83334L0.833252 1.16667'
 										stroke='currentColor'
-										stroke-width='1.5'
-										stroke-linecap='round'
-										stroke-linejoin='round'
+										strokeWidth='1.5'
+										strokeLinecap='round'
+										strokeLinejoin='round'
 									/>
 								</svg>
 							</div>
