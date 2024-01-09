@@ -8,10 +8,16 @@ const config: Config = {
   ],
   theme: {
     colors: {
+      'light-red': '#B44A49',
       'red': '#AB3534',
       'dark-red': '#79231E',
-      'light-red': '#B44A49',
-      'bg': '#FAFAFA',
+      'white': '#FFFFFF',
+      'light-grey': '#FAFAFA',
+      't-grey': '#D7D7D7',
+      'h-grey': '#6C6C6C',
+      'a-grey': '#AFAFAF',
+      'dark-grey': '#2B2B2B',
+      'black': '#000000',
     },
     fontFamily: {
       text: ['Inter', 'sans-serif'],
