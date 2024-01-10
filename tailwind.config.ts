@@ -74,6 +74,9 @@ const config: Config = {
         'sshort': { 'raw': '(max-height: 500px)'}
       }
     },
+    backgroundImage: {
+      'hero-pattern': "url('/main-banner.png')",
+    }
   },
   plugins: [],
 }

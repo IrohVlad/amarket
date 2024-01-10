@@ -1,5 +1,4 @@
 import Carousel from "@/app/components/carousel/carousel";
-import Image from 'next/image';
 
 const carouselData = [
     {
