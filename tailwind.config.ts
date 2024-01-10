@@ -19,6 +19,27 @@ const config: Config = {
       'dark-grey': '#2B2B2B',
       'black': '#000000',
     },
+    screens: {
+      '2xl': {'max': '1535px'},
+      // => @media (max-width: 1535px) { ... }
+      '1.5xl': {'max': '1330px'},
+      // => @media (max-width: 1330px) { ... }
+
+      'xl': {'max': '1279px'},
+      // => @media (max-width: 1279px) { ... }
+      '2lg': {'max': '1143px'},
+      // => @media (max-width: 1023px) { ... }
+      'lg': {'max': '1023px'},
+      // => @media (max-width: 1023px) { ... }
+
+      'md': {'max': '767px'},
+      // => @media (max-width: 767px) { ... }
+
+      'sm': {'max': '639px'},
+      // => @media (max-width: 639px) { ... }
+      'ss': {'max': '480px'},
+      // => @media (max-width: 639px) { ... }
+    },
     fontFamily: {
       text: ['Inter', 'sans-serif'],
       title: ['Raleway', 'serif'],
@@ -46,6 +67,11 @@ const config: Config = {
     extend: {
       maxWidth: {
         'c-full': '1290px',
+      },
+      screens: {
+        'mshort': { 'raw': '(max-height: 760px)'},
+        'short': { 'raw': '(max-height: 640px)'},
+        'sshort': { 'raw': '(max-height: 500px)'}
       }
     },
   },
