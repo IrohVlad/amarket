@@ -1,6 +1,6 @@
 import Hero from "./components/hero/hero"
 import ServiceList from "./components/serviceList/serviceList"
-import Section8 from "./components/panoram/panoram"
+import Panoram from "./components/panoram/panoram"
 import Pros from "./components/pros/pros"
 import Processes from "./components/processes/processes"
 import Blog from "./components/blog/blog"
@@ -11,7 +11,7 @@ export default function Home() {
     <main className=" flex flex-col flex-auto">
       <Hero/>
       <ServiceList/>
-      <Section8/>
+      <Panoram/>
       <Pros/>
       <Processes/>
       <Blog/>

@@ -6,7 +6,7 @@ export default function Processes() {
   return (
     <section className='w-full relative'>
         <div className='max-w-c-full m-auto h-screen flex flex-col justify-center '>
-            <div className='font-title text-2xl text-[black] font-bold'>
+            <div className='font-title text-2xl text-[black] font-bold sm:text-xl'>
                 Наши процессы
             </div>
             <div className='flex mt-[75px]'>

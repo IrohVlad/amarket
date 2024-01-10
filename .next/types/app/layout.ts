@@ -1,4 +1,4 @@
-// File: C:\Users\artem\OneDrive\Рабочий стол\asiafy\app\layout.tsx
+// File: C:\projects\asiafy\frontend\app\layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
