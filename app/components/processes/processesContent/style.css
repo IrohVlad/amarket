@@ -1,0 +1,14 @@
+.process-enter {
+    opacity: 0;
+  }
+  .process-enter-active {
+    opacity: 1;
+    transition: opacity 200ms;
+  }
+  .process-exit {
+    opacity: 1;
+  }
+  .process-exit-active {
+    opacity: 0;
+    transition: opacity 200ms;
+  }

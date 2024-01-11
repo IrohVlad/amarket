@@ -1,15 +1,49 @@
-import React from 'react'
+"use client"
+import React, {useState} from 'react'
 import Image from 'next/image'
 import Button from '../button/button'
+import Carousel from '../carousel2/carousel'
+import ProcessesContent from './processesContent/processesContent'
 
 export default function Processes() {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const data = [
+    {
+      title: 'Перед отправкой',
+      img_url: '/warehouse.png',
+      description: 'Мы гарантируем строгое соблюдение всех процедур до, во время и после перевозки.',
+      list: [
+        'Стандартные операционные процедуры по обслуживанию транспортных средств',
+        'План управления транспортировкой',
+        'Стандартные операционные процедуры для погрузки.'
+      ]
+    },
+    {
+      title: 'Во время отправки',
+      img_url: '/container.png',
+      description: 'Не мы гарантируем строгое соблюдение всех процедур до, во время и после перевозки.',
+      list: [
+        'Стандартные операционные процедуры по обслуживанию транспортных средств',
+        'Стандартные операционные процедуры для погрузки.'
+      ]
+    },
+    {
+      title: 'После отправки',
+      img_url: '/containers.png',
+      description: 'Мы гарантируем строгое соблюдение всех процедур до, во время и после перевозки.',
+      list: [
+        'План управления транспортировкой',
+        'Стандартные операционные процедуры для погрузки.'
+      ]
+    },
+  ]
   return (
     <section className='w-full relative'>
         <div className='max-w-c-full m-auto h-screen flex flex-col justify-center '>
-            <div className='font-title text-2xl text-[black] font-bold sm:text-xl'>
+            <h2 className='font-title text-2xl text-[black] font-bold sm:text-xl'>
                 Наши процессы
-            </div>
-            <div className='flex mt-[75px]'>
+            </h2>
+            {/* <div className='flex mt-[75px]'>
               <div>
                 <div className='pr-[100px] font-title text-[black] font-semibold font-sm'>Перед отправкой</div>
                 <div className='h-1 w-full bg-red mt-3'>
@@ -31,26 +65,9 @@ export default function Processes() {
               <div>
 
               </div>
-            </div>
-            <div className='flex justify-between items-center gap-[45px] mt-[60px]'>
-              <div className='max-w-[504px]'>
-                <div className=' font-text text-[#6C6C6C]'>
-                  Мы гарантируем строгое соблюдение всех процедур до, во время и после перевозки.
-                </div>
-                <ul className='text-[black] font-semibold font-title text-[18px] mt-10'>
-                  <li className='flex items-center before:rotate-45 before:rounded-[2px] before:mr-3 before:min-h-[8px] before:min-w-[8px] before:h-[8px] before:w-[8px] before:bg-red'>Стандартные операционные процедуры по обслуживанию транспортных средств</li>
-                  <li className='flex items-center before:rotate-45 before:rounded-[2px] before:mr-3 before:min-h-[8px] before:min-w-[8px] before:h-[8px] before:w-[8px] before:bg-red mt-6'>План управления транспортировкой</li>
-                  <li className='flex items-center before:rotate-45 before:rounded-[2px] before:mr-3 before:min-h-[8px] before:min-w-[8px] before:h-[8px] before:w-[8px] before:bg-red mt-6'>Стандартные операционные процедуры для погрузки.</li>
-                </ul>
-                <div className='mt-20 flex'>
-                  <Button className='px-4 py-3 mr-[30px]'><div className=' font-title font-semibold'>Посмотреть детали</div></Button>
-                  <Image src='/red-arrow.svg' alt='Red Arrow' width={33} height={10}/>
-                </div>
-              </div>
-              <div className='h-[474px] flex-1 relative'>
-                <Image src="/warehouse.png" alt="Warehouse"  fill={true} objectFit='cover' objectPosition='center' className='h-full w-full' />
-              </div>
-            </div>
+            </div> */}
+            <Carousel data={data} setter={setCurrentIndex} active={currentIndex} />
+            <ProcessesContent list={data[currentIndex].list} description={data[currentIndex].description} img_url={data[currentIndex].img_url}/>
         </div>
     </section>
   )

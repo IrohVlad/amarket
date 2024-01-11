@@ -6,7 +6,7 @@ export default function Blog() {
     <section className='w-full relative bg-[#F8F8F8]'>
         <div className='max-w-c-full m-auto h-fit p-6'>
             <div className='font-title text-2xl text-[black] font-bold flex justify-between items-center' >
-                <div className='sm:text-xl ss:text-lg'>Блог</div>
+                <h2 className='sm:text-xl ss:text-lg'>Блог</h2>
                 <div className='flex'>  
                     <div className='h-10 w-10 flex items-center justify-center bg-[white]'>
                         <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">

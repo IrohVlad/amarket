@@ -8,11 +8,11 @@ export default function Hero() {
           <div className=" font-title text-sm after:block after:h-[1px] after:max-w-[216px] after:w-auto after:bg-red">
             Доставка груза: без границ и ограничений
           </div>
-          <div className="mt-[28px] sm:text-xl font-title font-bold text-3xl max-w-[729px]">
+          <h1 className="mt-[28px] sm:text-xl font-title font-bold text-3xl max-w-[729px]">
             ASIAFY - ваш ключ к простой и быстрой логистике.
-          </div>
-          <div className="font-base font-text mt-[20px] max-w-[559px]">Доверьте нам свои отправления, и мы гарантируем их своевременную и надежную доставку. Все ваши потребности - наш приоритет!</div>
-          <Button rounded={true} className="mt-[100px]"><div className="px-[20px] py-4 font-semibold font-title">Наши сервисы</div></Button>
+          </h1>
+          <p className="font-base font-text mt-[20px] max-w-[559px]">Доверьте нам свои отправления, и мы гарантируем их своевременную и надежную доставку. Все ваши потребности - наш приоритет!</p>
+          <Button className="mt-[100px]"><div className="px-[20px] py-4 font-semibold font-title">Наши сервисы</div></Button>
         </div>
         <div className=" absolute top-0 left-0 h-full w-full">
           <Image src='/main-banner.png' fill={true} alt="Main Banner" objectFit="cover" className="md:object-[70%]" />

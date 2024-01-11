@@ -47,7 +47,7 @@ const Carousel = ({data}) => {
                     )
                 })}
             </div>
-            <div className="carousel-content">
+            {/* <div className="carousel-content">
                 {data.map((item: any, index: any) => {
                     return (
                         <div
@@ -73,7 +73,7 @@ const Carousel = ({data}) => {
                         </div>
                     )
                 })}
-            </div>
+            </div> */}
         </div>
     );
 };

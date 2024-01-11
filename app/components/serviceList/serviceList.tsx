@@ -4,11 +4,11 @@ import ServiceListCard from '../serviceListCard/serviceListCard'
 export default function serviceList() {
   return (
     <section className="w-full relative">
-        <div className='max-w-c-full m-auto h-screen mshort:h-fit 1.5xl:h-fit flex items-center justify-center box-content p-6'>
+        <div className='max-w-c-full m-auto h-fit flex items-center justify-center box-content px-6 py-16'>
             <div className='grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] sm:grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] gap-x-[30px] gap-y-9'>
-                <div className=' col-span-2 ss:col-auto pt-8 pr-[80px]'>
-                    <div className='font-title font-bold text-2xl sm:text-lg ss:text-lg text-[black]'>Ведущая компания в сфере транспортировки и логистики</div>
-                    <div className='font-text text-[#6C6C6C] mt-9'>Мы предоставляем высококачественные комплексные услуги и всегда учитываем потребности наших клиентов.</div>
+                <div className=' col-span-2 1.5xl:col-span-3 lg:col-span-2 ss:col-auto pt-8 pr-[80px]'>
+                    <h2 className='font-title font-bold text-2xl sm:text-xl ss:text-lg text-[black]'>Ведущая компания в сфере транспортировки и логистики</h2>
+                    <p className='font-text text-[#6C6C6C] mt-9'>Мы предоставляем высококачественные комплексные услуги и всегда учитываем потребности наших клиентов.</p>
                 </div>
 
                 <ServiceListCard title='Морские перевозки' text='Мы предлагаем морские грузоперевозки из страны и в страну' icon_url='/ship-icon.svg'/>

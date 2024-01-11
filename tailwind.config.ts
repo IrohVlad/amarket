@@ -22,7 +22,7 @@ const config: Config = {
     screens: {
       '2xl': {'max': '1535px'},
       // => @media (max-width: 1535px) { ... }
-      '1.5xl': {'max': '1330px'},
+      '1.5xl': {'max': '1350px'},
       // => @media (max-width: 1330px) { ... }
 
       'xl': {'max': '1279px'},
