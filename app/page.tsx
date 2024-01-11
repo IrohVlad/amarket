@@ -8,7 +8,7 @@ import FormSection from "./components/formSection/formSection"
 
 export default function Home() {
   return (
-    <main className=" flex flex-col flex-auto">
+    <main className=" flex flex-col flex-auto text-white">
       <Hero/>
       <ServiceList/>
       <Panoram/>

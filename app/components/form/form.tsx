@@ -83,14 +83,18 @@ export default function Form() {
                 </div>
                 <form onSubmit={(e)=>{
                     e.preventDefault()
+                    
                     validateForm()
                     if(!error.isValid){
-                        console.log(error.message)
-                    } else {
-                        console.log('Все ок')
 
+                        console.log(error.message)
+
+                    } else {
+
+                        console.log('Все ок')
                         // setData({name: '', phone: '', mail: '', message: ''})
                         // setError({isValid: true, message: ''})
+
                     }
                 }} className="w-[520px] 2lg:w-3/4 sm:w-full" action="">
                         <div className="mb-9 sm:mb-5"><input onChange={(e)=>{setData({...data, name: e.target.value})}} value={data.name} type='text' className="w-full font-title font-medium bg-inherit focus:outline-none border-b border-[#696969] h-[27px] transition-colors duration-300 focus:border-red caret-red" placeholder="Полное имя"/></div>
