@@ -44,8 +44,8 @@ export default function ProcessesContent({img_url, description, list, button}: I
                   {description}
                 </div>
                 <ul className='text-[black] font-semibold font-title text-[18px] mt-10'>
-                  {list?.map((value)=>{
-                    return <li className='flex items-center before:rotate-45 before:rounded-[2px] before:mr-3 before:min-h-[8px] before:min-w-[8px] before:h-[8px] before:w-[8px] before:bg-red mt-6'>{value}</li>
+                  {list?.map((value, index)=>{
+                    return <li key={value} className='flex items-center before:rotate-45 before:rounded-[2px] before:mr-3 before:min-h-[8px] before:min-w-[8px] before:h-[8px] before:w-[8px] before:bg-red mt-6'>{value}</li>
                   })}
                 </ul>
                 <div className='mt-20 flex'>
