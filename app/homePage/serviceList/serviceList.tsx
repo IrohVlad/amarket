@@ -4,7 +4,7 @@ import ServiceListCard from '../serviceListCard/serviceListCard'
 export default function serviceList() {
   return (
     <section className="w-full relative">
-        <div className='max-w-c-full m-auto h-fit flex items-center justify-center box-content px-6 py-16'>
+        <div className='max-w-c-full m-auto h-fit flex items-center justify-center box-content px-6 py-16 lg:px-10'>
             <div className='grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] sm:grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] gap-x-[30px] gap-y-9'>
                 <div className=' col-span-2 1.5xl:col-span-3 lg:col-span-2 ss:col-auto pt-8 pr-[80px]'>
                     <h2 className='font-title font-bold text-2xl sm:text-xl ss:text-lg text-[black]'>Ведущая компания в сфере транспортировки и логистики</h2>

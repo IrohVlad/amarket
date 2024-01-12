@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import Button from '../button/button'
+import Button from '../../components/button/button'
 
 export default function Panoram() {
   return (
@@ -14,7 +14,7 @@ export default function Panoram() {
             </div>
             <div className='bg-[#181818] px-[80px] py-16 ss:px-[40px] flex flex-col justify-center lg:m-6 z-10 lg:rounded-xl lg:bg-opacity-45'>
                 <div className='max-w-[410px]'>
-                    <h2 className=' font-title font-semibold text-2xl sm:text-xl'>Транспорт</h2>
+                    <h2 className=' font-title font-semibold text-2xl sm:text-xl ss:text-lg'>Транспорт</h2>
                     <p className=' font-text pt-9'>Услуги по транспортировке гарантируют быстрое и своевременное прохождение грузов через границы.</p>
                     <div className='flex justify-between gap-10px mt-[72px] sm:flex-col sm:justify-start sm:gap-8'>
                         <div>
@@ -44,7 +44,7 @@ export default function Panoram() {
                 </Button>
             </div>
             <div className='h-full w-full absolute left-0 top-0'>
-                    <Image src='/on-rails-man.png' alt='' fill={true} objectFit='cover' objectPosition='center' />
+                    <Image src='/home/on-rails-man.png' alt='' fill={true} objectFit='cover' objectPosition='center' />
                 </div>  
                 <div className='bg-[#333333] opacity-35 h-full w-full absolute top-0 left-0'>
 

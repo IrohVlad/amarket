@@ -1,7 +1,6 @@
 "use client"
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, InputHTMLAttributes, ReactNode} from 'react'
 import Image from 'next/image'
-import Button from '../button/button'
 import InputMask from 'react-input-mask';
 
 export default function Form() {
@@ -96,15 +95,18 @@ export default function Form() {
                         // setError({isValid: true, message: ''})
 
                     }
-                }} className="w-[520px] 2lg:w-3/4 sm:w-full" action="">
+                }} className="w-[520px] 2lg:w-full" action="">
                         <div className="mb-9 sm:mb-5"><input onChange={(e)=>{setData({...data, name: e.target.value})}} value={data.name} type='text' className="w-full font-title font-medium bg-inherit focus:outline-none border-b border-[#696969] h-[27px] transition-colors duration-300 focus:border-red caret-red" placeholder="Полное имя"/></div>
-                        <div className="mb-9 sm:mb-5"> <InputMask
-                            mask="+79999999999" // Задайте маску для мобильного телефона
-                            maskChar={null} // Позволяет удалить маску из значения
-                            placeholder="Номер телефона" // Опционально, чтобы показать пример ввода
-                            onChange={(e)=>{setData({...data, phone: e.target.value})}}
-                            value={data.phone}
-                            >{inputProps =><input type={'tel'} {...inputProps} className="w-full font-title font-medium bg-inherit focus:outline-none border-b border-[#696969] h-[27px] transition-colors duration-300 focus:border-red caret-red"/>}</InputMask>
+                        <div className="mb-9 sm:mb-5"> 
+                            <InputMask
+                                mask="+79999999999"
+                                maskChar={null}
+                                placeholder="Номер телефона"
+                                className="w-full font-title font-medium bg-inherit focus:outline-none border-b border-[#696969] h-[27px] transition-colors duration-300 focus:border-red caret-red"
+                                onChange={(e)=>{setData({...data, phone: e.target.value})}}
+                                value={data.phone}
+                                type={'tel'}
+                            />
                         </div>
                         <div className="mb-9 sm:mb-5"><input onChange={(e)=>{setData({...data, mail: e.target.value})}} value={data.mail} type='email' className="w-full font-title font-medium bg-inherit focus:outline-none border-b border-[#696969] h-[27px] transition-colors duration-300 focus:border-red caret-red" placeholder="Email адрес"/></div>
                         <div className="mb-[60px] sm:mb-10"><input onChange={(e)=>{setData({...data, message: e.target.value})}} value={data.message} type='text' className="w-full font-title font-medium bg-inherit focus:outline-none border-b border-[#696969] h-[79px] transition-colors duration-300 focus:border-red caret-red" placeholder="Сообщение"/></div>

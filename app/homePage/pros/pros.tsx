@@ -1,10 +1,10 @@
-import Button from "../button/button"
+import Button from "../../components/button/button"
 import Image from "next/image"
 
 export default function Pros() {
   return (
     <section className='w-full bg-[#C4C4C4] relative'>
-        <div className='w-full max-w-c-full h-fit 2lg:flex-col m-auto flex items-center 2lg:items-start justify-between z-10 relative px-6 py-16'>
+        <div className='w-full max-w-c-full h-fit 2lg:flex-col m-auto flex items-center 2lg:items-start justify-between z-10 relative px-6 py-16 lg:px-10'>
             <div className='max-w-[550px] 2lg:max-w-none 2lg:order-2 2lg:mt-[50px]'>
                 <h2 className='font-title sm:text-xl ss:text-lg text-2xl font-bold text-[black]'>Профессионалы в траспортировке</h2>
                 <p className='font-text text-[#6C6C6C] mt-9'>Мы предоставляем комплексные услуги по транспортировке для наших партнеров по всему миру и всегда предлагаем инновационные решения для сложных логистических задач.</p>

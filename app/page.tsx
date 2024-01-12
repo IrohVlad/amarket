@@ -1,10 +1,10 @@
-import Hero from "./components/hero/hero"
-import ServiceList from "./components/serviceList/serviceList"
-import Panoram from "./components/panoram/panoram"
-import Pros from "./components/pros/pros"
-import Processes from "./components/processes/processes"
-import Blog from "./components/blog/blog"
-import FormSection from "./components/formSection/formSection"
+import Hero from "./homePage/hero/hero"
+import ServiceList from "./homePage/serviceList/serviceList"
+import Panoram from "./homePage/panoram/panoram"
+import Pros from "./homePage/pros/pros"
+import Processes from "./homePage/processes/processes"
+import Blog from "./homePage/blog/blog"
+import FormSection from "./homePage/formSection/formSection"
 
 export default function Home() {
   return (
