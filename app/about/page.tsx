@@ -1,49 +1,35 @@
-import Carousel from "@/app/components/carousel/carousel";
-
-const carouselData = [
-    {
-        title: "Наша цель",
-        description: "Предоставляем нашим клиентам возможность осуществлять их отправления любым способом",
-        points: [
-            "Высший класс услуг в области транспортировки и логистики.",
-            "Гарантия своевременной доставки.",
-            "Самые выгодные условия доставки для клиентов."
-        ],
-        buttonText: "Читать дальше",
-        imageUrl: "/size-guide.png"
-    },
-    {
-        title: "Наше виденье",
-        description: "Мы стремимся стать лидерами в области транспортировки и логистики, предлагая клиентам широкий выбор способов отправления.",
-        points: [
-            "Развитие инновационных технологий для улучшения процессов транспортировки и логистики.",
-            "Создание партнерских отношений с ведущими поставщиками услуг в области транспортировки и логистики.",
-            "Постоянное совершенствование услуг и учет обратной связи от клиентов.",
-        ],
-        buttonText: "Читать дальше",
-    },
-];
+import Vision from "@/app/about/vision/vision";
+import Image from "next/image";
+import Advantages from "@/app/components/advantages/advantages";
 
 const About = () => {
     return (
-        <div className="h-full flex flex-auto flex-col px-6">
-            <div className="max-w-c-full w-full mx-auto">
-                <div>
-                    <div>
-                        <span>О компании</span>
-                        <h1>Ведущий мировой бизнес</h1>
-                        <p>Мы сформировали команду сотрудников, прошедших профессиональное обучение, которые готовы
-                            эффективно справляться с любыми возникающими ситуациями, обеспечивая спокойствие наших
-                            клиентов.</p>
-                        <span>CEO Zhang Xiaowey</span>
+        <div>
+            <div className="h-full flex flex-auto flex-col px-6 pt-9 pb-16 relative">
+                <div className="max-w-c-full w-full mx-auto flex flex-auto justify-between">
+                    <div className="w-1/2 pr-8 flex flex-col justify-between">
+                        <div>
+                            <span className="text-plus font-semibold">О компании</span>
+                            <h1 className="text-xl font-bold max-w-[450px] pt-5 pb-4">Ведущий мировой бизнес</h1>
+                            <p className="text-h-grey text-base font-text max-w-[520px] pb-7">Мы сформировали команду
+                                сотрудников, прошедших профессиональное обучение, которые готовы
+                                эффективно справляться с любыми возникающими ситуациями, обеспечивая спокойствие наших
+                                клиентов.</p>
+                            <span className="text-plus text-black font-semibold">CEO Zhang Xiaowey</span>
+                        </div>
+                        <div>
+                            <Vision></Vision>
+                        </div>
                     </div>
                     <div>
-                        <Carousel data={carouselData}></Carousel>
+                        <Image src={"/about/cargo-ship.png"} alt={"ship"} width={630} height={847}/>
                     </div>
+                    <div className="absolute bg-bg-grey max-w-screen w-full h-3/5 -z-10 bottom-0 left-0"/>
                 </div>
-                <div>
-
-                </div>
+            </div>
+            <Advantages></Advantages>
+            <div className="h-[80vh]">
+                <iframe src="https://s3.timeweb.com/2b62ef54-neva-sport/Kage%20no%20Jitsuryokusha%20ni%20Naritakute%21/1.mp4" frameBorder="0" allowFullScreen className="w-full h-full"></iframe>
             </div>
         </div>
     )

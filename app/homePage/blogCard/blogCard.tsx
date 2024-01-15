@@ -11,7 +11,7 @@ interface IBlogCard {
 
 export default function BlogCard({title, description, img_url, tag, date}: IBlogCard) {
   return (
-    <div className=''>
+    <article className=''>
                     <div className='h-[410px] 2lg:h-[300px] ss:h-[200px] relative overflow-hidden bg-black'>
                         <Image src={img_url} alt='Blog Card' fill={true} objectPosition='center' objectFit='cover' className='h-full w-full hover:scale-[1.1] hover:opacity-70 transition-all duration-500 will-change-transform' />
                     </div>
@@ -41,15 +41,15 @@ export default function BlogCard({title, description, img_url, tag, date}: IBlog
                             {date}
                         </div>
                     </div>
-                    <div className='mt-5 text-[black] lg:text-lg font-title text-[28px] font-bold'>
+                    <h3 className='mt-5 text-[black] lg:text-lg font-title text-[28px] font-bold'>
                         {title}
-                    </div>
-                    <div className='mt-4 font-text text-[#6C6C6C]'>
+                    </h3>
+                    <p className='mt-4 font-text text-[#6C6C6C]'>
                         {description}
-                    </div>
+                    </p>
                     <div className='text-[20px] 2lg:text-sm font-semibold text-[black] border-b-[1px] leading-[90%] w-fit mt-5 hover:text-red cursor-pointer transition-colors duration-100'>
                         Читать далее
                     </div>
-                </div>
+                </article>
   )
 }

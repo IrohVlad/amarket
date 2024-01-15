@@ -14,6 +14,7 @@ const config: Config = {
       'white': '#FFFFFF',
       'light-grey': '#FAFAFA',
       't-grey': '#D7D7D7',
+      'bg-grey': '#F8F8F8',
       'h-grey': '#6C6C6C',
       'a-grey': '#AFAFAF',
       'dark-grey': '#2B2B2B',
@@ -22,7 +23,7 @@ const config: Config = {
     screens: {
       '2xl': {'max': '1535px'},
       // => @media (max-width: 1535px) { ... }
-      '1.5xl': {'max': '1330px'},
+      '1.5xl': {'max': '1350px'},
       // => @media (max-width: 1330px) { ... }
 
       'xl': {'max': '1279px'},
@@ -50,6 +51,9 @@ const config: Config = {
       }],
       base: ['16px', {
         lineHeight: '24px',
+      }],
+      plus: ['18px', {
+        lineHeight: '26px',
       }],
       lg: ['20px', {
         lineHeight: '28px',
