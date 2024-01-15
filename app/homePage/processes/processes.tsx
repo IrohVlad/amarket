@@ -1,7 +1,5 @@
 "use client"
 import React, {useState} from 'react'
-import Image from 'next/image'
-import Button from '../../components/button/button'
 import Carousel from '../../components/carousel/carousel'
 import ProcessesContent from '../../components/carousel/processesContent/processesContent'
 

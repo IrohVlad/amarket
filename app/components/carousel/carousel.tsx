@@ -15,9 +15,9 @@ export default function Carousel({data, setter, active}: any) {
     const handleButtonClick = (index: React.SetStateAction<number>) => {
         setter(index);
     };
-  return (
-    <>
-    <div className="carousel-buttons">
+    return (
+        <>
+            <div className="carousel-buttons">
                 {data?.map((item: any, index: any) => {
                     return (
                         <button
@@ -42,7 +42,7 @@ export default function Carousel({data, setter, active}: any) {
                         </div>
                     )
                 })}
-    </div>
-    </>
-  )
+            </div>
+        </>
+    )
 }

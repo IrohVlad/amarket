@@ -14,6 +14,7 @@ const config: Config = {
       'white': '#FFFFFF',
       'light-grey': '#FAFAFA',
       't-grey': '#D7D7D7',
+      'bg-grey': '#F8F8F8',
       'h-grey': '#6C6C6C',
       'a-grey': '#AFAFAF',
       'dark-grey': '#2B2B2B',
@@ -50,6 +51,9 @@ const config: Config = {
       }],
       base: ['16px', {
         lineHeight: '24px',
+      }],
+      plus: ['18px', {
+        lineHeight: '26px',
       }],
       lg: ['20px', {
         lineHeight: '28px',
