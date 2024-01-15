@@ -7,7 +7,7 @@ const Header = () => {
     const pathname = usePathname()
 
     return (
-        <header className='px-6 h-16 flex items-center'>
+        <header className='px-6 h-16 flex items-center sticky z-50 top-0 left-0 w-full bg-white'>
             <div className="max-w-c-full m-auto flex items-center justify-between w-full">
                 <Image src="/logo.svg" alt="logo" width={110} height={23}/>
                 <div className="font-semibold text-h-grey text-sm max-w-3xl w-full flex justify-between">
