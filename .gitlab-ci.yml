@@ -3,6 +3,8 @@ stages:
 
 deploy:
   image: docker:20.10.16
+  rules:
+    - if: '$CI_COMMIT_REF_NAME == "main"'
   stage: deploy
   services:
     - docker:20.10.16-dind
