@@ -1,10 +1,10 @@
-import Hero from "./homePage/hero/hero"
-import ServiceList from "./homePage/serviceList/serviceList"
-import Panoram from "./homePage/panoram/panoram"
-import Pros from "./homePage/pros/pros"
-import Processes from "./homePage/processes/processes"
-import Blog from "./homePage/blog/blog"
-import FormSection from "./homePage/formSection/formSection"
+import Hero from "./home/hero/hero"
+import ServiceList from "./home/serviceList/serviceList"
+import Panoram from "./home/panoram/panoram"
+import Pros from "./home/pros/pros"
+import Processes from "./home/processes/processes"
+import Blog from "./home/blog/blog"
+import FormSection from "./home/formSection/formSection"
 
 export default function Home() {
   return (
