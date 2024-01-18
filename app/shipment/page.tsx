@@ -1,7 +1,7 @@
 import React from 'react'
 import ServiceHero from '../components/serviceHero/serviceHero'
 import ShipmentForm from './shipmentForm/shipmentForm'
-import ShipmentCards from './shipmentCards/shipmentCards'
+import ShipmentCards from '../components/shipmentCards/shipmentCards'
 import Trucks from '../components/trucks/trucks'
 
 export default function Shipment() {
