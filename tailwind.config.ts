@@ -80,6 +80,7 @@ const config: Config = {
     },
     backgroundImage: {
       'hero-pattern': "url('/main-banner.png')",
+      'services-home-banner': "url('/services/home-delivery-service-and-working-service-mind.png')"
     }
   },
   plugins: [],
