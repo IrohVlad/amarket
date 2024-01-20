@@ -5,7 +5,7 @@ import Button from '../../components/button/button'
 export default function Panoram() {
   return (
     <section className='w-full relative'>
-        <div className=' h-screen m-auto max-w-c-full mshort:h-fit lg:h-fit flex items-centers xl:grid-cols-[1fr_1fr] gap-5 lg:grid-cols-[1fr] py-[45px] px-6'>
+        <div className=' h-fit m-auto max-w-c-full mshort:h-fit lg:h-fit flex items-centers xl:grid-cols-[1fr_1fr] gap-5 lg:grid-cols-[1fr] py-[45px] px-6'>
             <div className='relative self-end lg:hidden'>
                 <div className='flex flex-col h-full justify-end z-10 relative'>
                     <div className=' font-medium text-[18px] font-title'>Железнодорожные перевозки</div>

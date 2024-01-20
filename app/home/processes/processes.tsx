@@ -19,6 +19,7 @@ export default function Processes() {
     },
     {
       title: 'Во время отправки',
+      img_url: '/home/on-rails-man.png',
       description: 'Не мы гарантируем строгое соблюдение всех процедур до, во время и после перевозки.',
       button: 'О нас',
       list: [
@@ -39,7 +40,7 @@ export default function Processes() {
   ]
   return (
     <section className='w-full relative'>
-        <div className='max-w-c-full m-auto h-screen lg:h-fit flex flex-col justify-center px-6 py-16 lg:px-10'>
+        <div className='max-w-c-full m-auto h-fit lg:h-fit flex flex-col justify-center px-6 py-16 lg:px-10'>
             <h2 className='font-title text-2xl text-[black] font-bold sm:text-xl ss:text-lg'>
                 Наши процессы
             </h2>
