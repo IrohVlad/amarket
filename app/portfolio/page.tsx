@@ -1,0 +1,121 @@
+'use client'
+import React, {useState} from 'react'
+import ServiceHero from '../components/serviceHero/serviceHero'
+import Carousel from '../components/carousel/carousel'
+import Grid from './grid/grid'
+
+const data = [
+  {
+    title: 'Отправление',
+    icon: '/portfolio/box.svg',
+    items: [
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+    ]
+  },
+  {
+    title: 'Морские перевозки',
+    icon: '/portfolio/ship.svg',
+    items: [
+      {img_url: '/home/warehouse.png'},
+      {img_url: '/home/warehouse.png'},
+      {img_url: '/home/warehouse.png'},
+      {img_url: '/home/warehouse.png'},
+      {img_url: '/home/warehouse.png'},
+      {img_url: '/home/warehouse.png'},
+      {img_url: '/home/warehouse.png'},
+      {img_url: '/home/warehouse.png'},
+      {img_url: '/home/warehouse.png'},
+      {img_url: '/home/warehouse.png'},
+    ]
+  },
+  {
+    title: 'Авиаперевозки',
+    icon: '/portfolio/plane.svg',
+    items: [
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+    ]
+  },
+  {
+    title: 'Железнодорожные перевозки',
+    icon: '/portfolio/train.svg',
+    items: [
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+    ]
+  },
+  {
+    title: 'Автомобильные перевозки',
+    icon: '/portfolio/car.svg',
+    items: [
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+    ]
+  },
+  {
+    title: 'Складские перевозки',
+    icon: '/portfolio/store.svg',
+    items: [
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+      {img_url: '/home/containers.png'},
+    ]
+  },
+]
+
+export default function Portfolio() {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  return (
+    <>
+        <ServiceHero  title='Наши работы' routes={['Главная', 'Наши работы']} className='bg-[linear-gradient(90deg,rgba(171,53,52,0.7)0%,rgba(255,7,5,0.5)100%)]'/>
+        <section>
+            <div className='max-w-c-full mt-[120px] mb-6 mx-auto grid grid-cols-[200px,_1fr] px-6 py-10 lg:px-10 gap-8 relative'>
+                <div className=' h-fit sticky top-20'>
+                    <Carousel active={currentIndex} setter={setCurrentIndex} column data={data}/>
+                </div>
+                <Grid items={data[currentIndex].items} />
+            </div>
+        </section>
+    </>
+  )
+}

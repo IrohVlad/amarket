@@ -44,6 +44,7 @@
 }
 
 .carousel-button {
+    position: relative;
     text-align: left;
     color: #6C6C6C;
     font-weight: 600;
@@ -52,4 +53,20 @@
 .carousel-button.active {
     color: black;
     font-weight: 600;
+}
+
+.carousel-button::after{
+    position: absolute;
+    transition-property: background;
+    transition-duration: 0.3s;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: -10px;    
+    background-color:#C4C4C4;
+}
+.carousel-button.active::after{   
+    height: 4px; 
+    background-color:#AB3534;
 }

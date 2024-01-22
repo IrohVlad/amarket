@@ -36,7 +36,7 @@ export default function Example() {
     const pathname = usePathname();
 
     return (
-        <header className="bg-white sticky z-50 top-0 left-0">
+        <header className="bg-white sticky z-50 top-0 left-0 text-black">
             <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 h-16 lg:px-8" aria-label="Global">
                 <div className="flex flex-1">
                     <a href="#" className="-m-1.5 p-1.5">
