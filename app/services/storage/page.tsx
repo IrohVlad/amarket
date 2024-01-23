@@ -17,24 +17,24 @@ export default function Storage() {
                 <Slider img_urls={['/services/unsplash_CfKV0CecnU8.png', '/services/unsplash_CfKV0CecnU8.png']}/>
                 <div className="mt-[52px] text-black">
                     <div className="flex lg:flex-col lg:items-start gap-8 items-center border-b border-black border-opacity-20 pb-[20px]">
-                        <div className="w-[185px] min-w-[185px] lg:w-auto flex items-center text-[20px] font-semibold before:mr-4 before:w-[10px] before:min-w-[10px] before:h-[10px] before:bg-red before:rounded-full">Расположение:</div>
-                        <div className="text-[20px] font-semibold">Guangyuan (Guangzhou) Warehousing and Logistics Co., Ltd. ADDRESS:No. 29, Jinti Avenue, Timian Town, Huadu District, Guangzhou</div>
+                        <div className="w-[185px] min-w-[185px] lg:w-auto lg:font-bold flex items-center text-[20px] font-semibold before:mr-4 before:w-[10px] before:min-w-[10px] before:h-[10px] before:bg-red before:rounded-full">Расположение:</div>
+                        <div className="text-[20px]">Guangyuan (Guangzhou) Warehousing and Logistics Co., Ltd. ADDRESS:No. 29, Jinti Avenue, Timian Town, Huadu District, Guangzhou</div>
                     </div>
                     <div className="flex lg:flex-col lg:items-start gap-8 items-center border-b border-black border-opacity-20 pb-[20px]">
-                        <div className="w-[185px] min-w-[185px] lg:w-auto flex items-center text-[20px] font-semibold before:mr-4 before:w-[10px] before:min-w-[10px] before:h-[10px] before:bg-red before:rounded-full">Соответствие :</div>
-                        <div className="text-[20px] font-semibold">ISO9001:2008, FTZ, TS16949:2002, FDA Regulation</div>
+                        <div className="w-[185px] min-w-[185px] lg:w-auto lg:font-bold flex items-center text-[20px] font-semibold before:mr-4 before:w-[10px] before:min-w-[10px] before:h-[10px] before:bg-red before:rounded-full">Соответствие :</div>
+                        <div className="text-[20px]">ISO9001:2008, FTZ, TS16949:2002, FDA Regulation</div>
                     </div>
                     <div className="flex lg:flex-col lg:items-start gap-8 items-center border-b border-black border-opacity-20 pb-[20px]">
-                        <div className="w-[185px] min-w-[185px] lg:w-auto flex items-center text-[20px] font-semibold before:mr-4 before:w-[10px] before:min-w-[10px] before:h-[10px] before:bg-red before:rounded-full">Размеры :</div>
-                        <div className="text-[20px] font-semibold">Length 250 M, Width 80 M, 12 Meter </div>
+                        <div className="w-[185px] min-w-[185px] lg:w-auto lg:font-bold flex items-center text-[20px] font-semibold before:mr-4 before:w-[10px] before:min-w-[10px] before:h-[10px] before:bg-red before:rounded-full">Размеры :</div>
+                        <div className="text-[20px]">Length 250 M, Width 80 M, 12 Meter </div>
                     </div>
                     <div className="flex lg:flex-col lg:items-start gap-8 items-center border-b border-black border-opacity-20 pb-[20px]">
-                        <div className="w-[185px] min-w-[185px] lg:w-auto flex items-center text-[20px] font-semibold before:mr-4 before:w-[10px] before:min-w-[10px] before:h-[10px] before:bg-red before:rounded-full">Уклон крыши:</div>
-                        <div className="text-[20px] font-semibold">1:10</div>
+                        <div className="w-[185px] min-w-[185px] lg:w-auto lg:font-bold flex items-center text-[20px] font-semibold before:mr-4 before:w-[10px] before:min-w-[10px] before:h-[10px] before:bg-red before:rounded-full">Уклон крыши:</div>
+                        <div className="text-[20px]">1:10</div>
                     </div>
                     <div className="flex lg:flex-col lg:items-start gap-8 items-center">
-                        <div className="w-[185px] min-w-[185px] lg:w-auto flex items-center text-[20px] font-semibold before:mr-4 before:w-[10px] before:min-w-[10px] before:h-[10px] before:bg-red before:rounded-full">Крановые системы :</div>
-                        <div className="text-[20px] font-semibold">Имеются</div>
+                        <div className="w-[185px] min-w-[185px] lg:w-auto lg:font-bold flex items-center text-[20px] font-semibold before:mr-4 before:w-[10px] before:min-w-[10px] before:h-[10px] before:bg-red before:rounded-full">Крановые системы :</div>
+                        <div className="text-[20px]">Имеются</div>
                     </div>
                 </div>
                 <p className="my-[36px] text-[16px] text-[#6C6C6C] leading-[26px]">Многие из наших объектов идеально расположены вблизи ключевых морских портов основных транспортных маршрутов, что позволяет быстрее обрабатывать ваш груз. Мы предлагаем различные услуги в зависимости от происхождения вашего груза - мы можем напрямую перегружать или направлять грузы прямо в распределительный центр.</p>
@@ -43,16 +43,16 @@ export default function Storage() {
                 <h3 className="font-bold text-[28px] mt-[80px] text-black ss:text-lg">
                     Наши решения:
                 </h3>
-                <div className="flex items-center lg:flex-col justify-between gap-3 mt-[30px] mb-[38px] text-black">
-                    <div className="w-[263px] h-[221px] lg:w-full shadow-lg flex flex-col items-center justify-center px-[28px]">
+                <div className="grid grid-cols-[1fr_1fr_1fr] 2lg:grid-cols-[1fr] gap-3 mt-[30px] mb-[38px] text-black">
+                    <div className=" h-[221px] lg:w-full shadow-lg flex flex-col items-center justify-center px-[28px]">
                         <div><Image height={44} width={44} className="mb-8" src="/services/box.svg" alt="Card icon"/></div>
                         <div className=" text-center text-[18px] font-medium">Краткосрочное хранение</div>
                     </div>
-                    <div className="w-[263px] h-[221px] lg:w-full shadow-lg flex flex-col items-center justify-center px-[28px]">
+                    <div className=" h-[221px] lg:w-full shadow-lg flex flex-col items-center justify-center px-[28px]">
                         <div><Image height={44} width={44} className="mb-8" src="/services/store.svg" alt="Card icon"/></div>
                         <div className=" text-center text-[18px] font-medium">Совместное использование склада</div>
                     </div>
-                    <div className="w-[263px] h-[221px] lg:w-full shadow-lg flex flex-col items-center justify-center px-[28px]">
+                    <div className=" h-[221px] lg:w-full shadow-lg flex flex-col items-center justify-center px-[28px]">
                         <div><Image height={44} width={44} className="mb-8" src="/services/net.svg" alt="Card icon"/></div>
                         <div className=" text-center text-[18px] font-medium">Аренда склада с самостоятельным управлением</div>
                     </div>

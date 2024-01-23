@@ -10,7 +10,7 @@ import Trucks from '@/app/components/trucks/trucks'
 export default function Sea() {
   return (
     <>
-        <ServiceHero title='Таможенное оформление' routes={['Главная', 'Услуги', 'Морские перевозки']} img_url='/services/unsplash_1cqIcrWFQBI.png' />
+        <ServiceHero title='Морские перевозки' routes={['Главная', 'Услуги', 'Морские перевозки']} img_url='/services/unsplash_1cqIcrWFQBI.png' />
         <PageWithSidebar>
         <h2 className=" text-[44px] font-bold max-w-[550px] mb-[40px] text-black sm:text-xl ss:text-[25px]">Морские перевозки</h2>
                 <p className="my-[36px] text-[16px] text-[#6C6C6C] leading-[26px]">Управление цепочкой поставок - это сложная операция из-за торговых барьеров и требований соответствия таможенным правилам. Поэтому у нас есть решения, специально разработанные для вашего товарооборота. Мы помогаем вам производить таможенное оформление ваших отправлений в срок, независимо от объема, масштаба или характера.</p>
