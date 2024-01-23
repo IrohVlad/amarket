@@ -5,7 +5,7 @@ import './carousel.css'
 import Image from 'next/image';
 
 
-export default function Carousel({data, setter, active, column, link}: any) {
+export default function Carousel({data, setter, active, column, className}: any) {
     useEffect(() => {
         const interval = setInterval(() => {
             setter((prevIndex: any) => (prevIndex + 1) % data.length);
@@ -18,13 +18,12 @@ export default function Carousel({data, setter, active, column, link}: any) {
         setter(index);
     };
     return (
-        <>
-            <div className={`carousel-buttons ${column && 'flex-col gap-10'}`}>
+            <div className={`carousel-buttons ${column && 'flex-col gap-10'} ` + className}>
                 {data?.map((item: any, index: any) => {
                     return (
                         <button
                             key={index}
-                            className={`carousel-button flex gap-3 ${active === index ? 'active' : ''} ${column && 'w-full'}`}
+                            className={`carousel-button flex items-center gap-3 ${active === index ? 'active' : ''} ${column && 'w-full'}`}
                             onClick={() => handleButtonClick(index)}
                             style={column ? {} : {width: `calc(100% / ${data.length})`}}
                         >
@@ -34,18 +33,5 @@ export default function Carousel({data, setter, active, column, link}: any) {
                     )
                 })}
             </div>
-            {/* <div className="carousel-line">
-                {data?.map((_: any, index: any) => {
-                    return (
-                        <div
-                            key={index}
-                            className={`carousel-line-item ${active === index ? 'active' : ''}`}
-                            style={{width: `calc(100% / ${data.length})`}}
-                        >
-                        </div>
-                    )
-                })}
-            </div> */}
-        </>
     )
 }
