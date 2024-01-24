@@ -5,11 +5,11 @@ import './carousel.css'
 import Image from 'next/image';
 
 
-export default function Carousel({data, setter, active, column, className}: any) {
+export default function Carousel({data, setter, active, column, className, delay}: any) {
     useEffect(() => {
         const interval = setInterval(() => {
             setter((prevIndex: any) => (prevIndex + 1) % data.length);
-        }, 2000000);
+        }, 200000);
 
         return () => clearInterval(interval);
     }, []);
