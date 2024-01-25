@@ -182,22 +182,22 @@ export default function Page() {
   const [currentIndex, setCurrentIndex] = useState(0)
   return (
     <>
-        <ServiceHero title='Центр помощи' routes={['Главная', 'Центр помощи']} className='bg-[linear-gradient(90deg,rgba(171,53,52,0.7)0%,rgba(255,7,5,0.5)100%)]'     />
+        <ServiceHero title='Центр помощи' routes={['Главная', 'Центр помощи']} className='bg-[linear-gradient(90deg,rgba(171,53,52,0.5)0%,rgba(255,7,5,0.5)100%)] bg-opacity-50'     />
         <section>
-            <div className='max-w-c-full mt-[120px] mb-12 mx-auto'>
-                <div className=' font-title mb-20 text-black font-bold text-2xl max-w-[550px]'>
+            <div className='max-w-c-full mt-[120px] mb-12 mx-auto p-6 lg:px-10'>
+                <h2 className=' font-title mb-20 text-black font-bold text-2xl max-w-[550px] sm:text-xl ss:text-lg'>
                     О чем нас спрашивают наши клиенты
-                </div>
+                </h2>
                 <Carousel active={currentIndex} setter={setCurrentIndex} data={data} className=''/>
             </div>
         </section>
         <section className='mb-[100px]'>
-          <div className='max-w-c-full mb-6 mx-auto'>
+          <div className='max-w-c-full mb-6 mx-auto p-6 lg:px-10'>
             <Form/>
           </div>
         </section>
         <section className='mb-[130px]'>
-          <div className='max-w-c-full mb-6 mx-auto'>
+          <div className='max-w-c-full mb-6 mx-auto p-6 lg:px-10'>
             <QuestionAnswerBlock items={data[currentIndex].items}/>
           </div>
         </section>

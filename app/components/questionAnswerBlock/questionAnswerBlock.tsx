@@ -8,7 +8,7 @@ interface IQuestionAnswerBlockProps {
 
 export default function QuestionAnswerBlock({items}: IQuestionAnswerBlockProps) {
   return (
-    <div className='grid gap-x-16 grid-cols-[1fr_1fr]'>
+    <div className='grid gap-x-16 grid-cols-[1fr_1fr] lg:grid-cols-[1fr]'>
         {
             items?.length && items.map((value, index)=>{
                 return (
