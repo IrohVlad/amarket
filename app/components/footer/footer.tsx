@@ -49,7 +49,7 @@ const Footer = () => {
                         <div className="flex flex-col">
                             <h4 className="text-white font-semibold pb-4">Компания</h4>
                             <Link href="/" className="pb-3 hover:text-white"><span>О нас</span></Link>
-                            <Link href="/" className="pb-3 hover:text-white"><span>Карьера</span></Link>
+                            <Link href="about" className="pb-3 hover:text-white"><span>Карьера</span></Link>
                             <Link href="/" className="hover:text-white"><span>Контакты</span></Link>
                         </div>
                         <div className="flex flex-col">
@@ -62,8 +62,8 @@ const Footer = () => {
                             <h4 className="text-white font-semibold pb-4">Ресурсы</h4>
                             <Link href="/" className="pb-3 hover:text-white"><span>Блог</span></Link>
                             <Link href="/" className="pb-3 hover:text-white"><span>Мероприятия</span></Link>
-                            <Link href="/" className="pb-3 hover:text-white"><span>Центр помощи</span></Link>
-                            <Link href="/" className="hover:text-white"><span>Частые вопросы</span></Link>
+                            <Link href="help" className="pb-3 hover:text-white"><span>Центр помощи</span></Link>
+                            <Link href="questions" className="hover:text-white"><span>Частые вопросы</span></Link>
                         </div>
                     </div>
                 </div>

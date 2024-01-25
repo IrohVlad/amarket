@@ -107,7 +107,7 @@ export default function Portfolio() {
   const [currentIndex, setCurrentIndex] = useState(0)
   return (
     <>
-        <ServiceHero  title='Наши работы' routes={['Главная', 'Наши работы']} className='bg-[linear-gradient(90deg,rgba(171,53,52,0.5)0%,rgba(255,7,5,0.5)100%)] bg-opacity-50'/>
+        <ServiceHero  title='Наши работы' routes={['Главная', 'Наши работы']} className='relative after:absolute after:block bg-[#C4C4C4] after:top-0 after:left-0 after:w-full after:h-full after:z-100 after:bg-[linear-gradient(90deg,rgba(171,53,52,0.5)0%,rgba(255,7,5,0.5)200%)] after:bg-opacity-50'/>
         <section>
             <div className='max-w-c-full mt-[120px] mb-6 mx-auto grid grid-cols-[200px,_1fr] lg:grid-cols-[1fr] px-6 py-10 lg:px-10 gap-8 relative'>
                 <div className=' h-fit sticky top-20'>

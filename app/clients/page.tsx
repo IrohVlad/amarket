@@ -71,7 +71,7 @@ const clients = [
 export default function Clients() {
   return (
     <>
-        <ServiceHero title='Клиенты' routes={['Главная', 'Клиенты']} className='bg-[linear-gradient(90deg,rgba(171,53,52,0.5)0%,rgba(255,7,5,0.5)100%)] bg-opacity-50'/>
+        <ServiceHero title='Клиенты' routes={['Главная', 'Клиенты']} className='relative after:absolute after:block bg-[#C4C4C4] after:top-0 after:left-0 after:w-full after:h-full after:z-100 after:bg-[linear-gradient(90deg,rgba(171,53,52,0.5)0%,rgba(255,7,5,0.5)200%)] after:bg-opacity-50'/>
         <section className=' relative'>
             <div className='max-w-c-full mt-[120px] mb-6 mx-auto grid grid-cols-[410px_1fr] lg:grid-cols-[1fr] gap-x-[52px] p-6 lg:px-10'>
                 <h2 className=' font-title text-black font-bold text-2xl sm:text-xl ss:text-lg lg:mb-[80px]'>

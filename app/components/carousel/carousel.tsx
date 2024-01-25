@@ -18,7 +18,7 @@ export default function Carousel({data, setter, active, column, className}: any)
         setter(index);
     };
     return (
-            <div className={`carousel-buttons lg:flex-col gap-10 ${column && 'flex-col gap-10'} ` + className}>
+            <div className={`carousel-buttons lg:flex-col lg:gap-10 ${column && 'flex-col gap-10'} ` + className}>
                 {data?.map((item: any, index: any) => {
                     return (
                         <button
