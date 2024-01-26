@@ -182,9 +182,9 @@ export default function Page() {
   const [currentIndex, setCurrentIndex] = useState(0)
   return (
     <>
-        <ServiceHero title='Центр помощи' routes={['Главная', 'Центр помощи']} className='relative after:absolute after:block bg-[#C4C4C4] after:top-0 after:left-0 after:w-full after:h-full after:z-100 after:bg-[linear-gradient(90deg,rgba(171,53,52,0.5)0%,rgba(255,7,5,0.5)200%)] after:bg-opacity-50'     />
+        <ServiceHero title='Центр помощи' routes={[{title:'Главная', href: '/'}, {title:'Центр помощи', href: 'help'}]} className='relative after:absolute after:block bg-[#C4C4C4] after:top-0 after:left-0 after:w-full after:h-full after:z-100 after:bg-[linear-gradient(90deg,rgba(171,53,52,0.5)0%,rgba(255,7,5,0.5)200%)] after:bg-opacity-50'     />
         <section>
-            <div className='max-w-c-full mt-[120px] mb-12 mx-auto p-6 lg:px-10'>
+            <div className='max-w-c-full mt-[120px] lg:mt-0 mb-12 mx-auto p-6 lg:px-8'>
                 <h2 className=' font-title mb-20 text-black font-bold text-2xl max-w-[550px] sm:text-xl ss:text-lg'>
                     О чем нас спрашивают наши клиенты
                 </h2>
@@ -192,12 +192,12 @@ export default function Page() {
             </div>
         </section>
         <section className='mb-[100px]'>
-          <div className='max-w-c-full mb-6 mx-auto p-6 lg:px-10'>
+          <div className='max-w-c-full mb-6 mx-auto p-6 lg:px-8'>
             <Form/>
           </div>
         </section>
         <section className='mb-[130px]'>
-          <div className='max-w-c-full mb-6 mx-auto p-6 lg:px-10'>
+          <div className='max-w-c-full mb-6 mx-auto p-6 lg:px-8'>
             <QuestionAnswerBlock items={data[currentIndex].items}/>
           </div>
         </section>

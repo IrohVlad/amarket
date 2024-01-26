@@ -1,14 +1,14 @@
 import React from 'react'
-import Path from '../components/path/path'
+import Path from '../../components/path/path'
 import Map from './map/map'
-import CountryCard from '../components/countryCard/countryCard'
+import CountryCard from '../../components/countryCard/countryCard'
 
 export default function Network() {
   return (
     <>
         <section>
           <div className='max-w-c-full w-full mx-auto py-[34px] px-6'>
-            <Path routes={['Главная', 'Оформить отправление', 'Где мы работаем']} className="text-black" />
+            <Path black routes={[{title:'Главная', href: '/'}, {title:'Оформить отправление', href: '/shipment'}, {title:'Где мы работаем', href: 'network'}]}  />
           </div>
         </section>
         <Map/>
