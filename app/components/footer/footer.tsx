@@ -48,15 +48,15 @@ const Footer = () => {
                     <div className="flex justify-between text-base text-a-grey w-4/12">
                         <div className="flex flex-col">
                             <h4 className="text-white font-semibold pb-4">Компания</h4>
-                            <Link href="/" className="pb-3 hover:text-white"><span>О нас</span></Link>
+                            <Link href="about" className="pb-3 hover:text-white"><span>О нас</span></Link>
                             <Link href="about" className="pb-3 hover:text-white"><span>Карьера</span></Link>
-                            <Link href="/" className="hover:text-white"><span>Контакты</span></Link>
+                            <Link href="contacts" className="hover:text-white"><span>Контакты</span></Link>
                         </div>
                         <div className="flex flex-col">
                             <h4 className="text-white font-semibold pb-4">Информация</h4>
-                            <Link href="/" className="pb-3 hover:text-white"><span>Правила</span></Link>
-                            <Link href="/" className="pb-3 hover:text-white"><span>Наши работы</span></Link>
-                            <Link href="/" className="hover:text-white"><span>Клиенты</span></Link>
+                            <Link href="policy" className="pb-3 hover:text-white"><span>Правила</span></Link>
+                            <Link href="portfolio" className="pb-3 hover:text-white"><span>Наши работы</span></Link>
+                            <Link href="clients" className="hover:text-white"><span>Клиенты</span></Link>
                         </div>
                         <div className="flex flex-col">
                             <h4 className="text-white font-semibold pb-4">Ресурсы</h4>
