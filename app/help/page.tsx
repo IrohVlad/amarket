@@ -191,14 +191,14 @@ export default function Page() {
                 <Carousel active={currentIndex} setter={setCurrentIndex} data={data} className=''/>
             </div>
         </section>
-        <section className='mb-[100px]'>
-          <div className='max-w-c-full mb-6 mx-auto p-6 lg:px-8'>
-            <Form/>
-          </div>
-        </section>
         <section className='mb-[130px]'>
           <div className='max-w-c-full mb-6 mx-auto p-6 lg:px-8'>
             <QuestionAnswerBlock items={data[currentIndex].items}/>
+          </div>
+        </section>
+        <section className='mb-[100px]'>
+          <div className='max-w-c-full mb-6 mx-auto p-6 lg:px-8'>
+            <Form/>
           </div>
         </section>
         <Trucks/>
