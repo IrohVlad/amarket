@@ -12,11 +12,3 @@
 .white-bread .ant-breadcrumb-separator{
     color: white !important;
 }
-@media(max-width: 600px){
-    .ant-breadcrumb-separator{
-        display: none;
-    }
-    .ant-breadcrumb ol{
-        display: block;
-    }
-}
