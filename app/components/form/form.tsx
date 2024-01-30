@@ -1,37 +1,20 @@
 "use client"
 import React, {useState, useEffect, InputHTMLAttributes, ReactNode} from 'react'
 import Image from 'next/image'
+import { Button, Form as Antform, Input, ConfigProvider } from 'antd';
 import InputMask from 'react-input-mask';
+import './styles.css'
+
+const onFinish = (values: any) => {
+    console.log('Success:', values);
+  };
+  
+const onFinishFailed = (errorInfo: any) => {
+    console.log('Failed:', errorInfo);
+};
 
 export default function Form() {
-    const [data, setData] = useState({name: '', phone: '', mail: '', message: ''});
-    const [error, setError] = useState({isValid: true, message: ''})
 
-    const validateForm = () => {
-
-        if (!data.name.trim() && data.name.length == 0) {
-            setError({isValid: false, message: 'Имя пользователя обязательно'})
-            return
-        }
-        if (!data.phone.trim()) {
-            setError({isValid: false, message: 'Номер телефона обязателен'})
-            return
-        }
-        if (!data.mail.trim()) {
-            setError({isValid: false, message: 'Email обязателен'})
-            return
-        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.mail.trim())) {
-            setError({isValid: false, message: 'Введите корректный email'})
-            return
-        }
-        if (!data.message.trim()) {
-            setError({isValid: false, message: 'Сообщение обязателен'})
-            return
-        }
-        else {
-            setError({isValid: true, message: ''})
-        }
-    };
 
     return (
         <>
@@ -82,24 +65,34 @@ export default function Form() {
                         <div className="mr-3"><Image src="/mail2.svg" width={34} height={34} alt="Mail"/></div>
                         <div className="font-bold text-[22px] ss:text-lg">Напишите нам</div>
                     </div>
-                    <form onSubmit={(e) => {
-                        e.preventDefault()
-
-                        validateForm()
-                        if (!error.isValid) {
-                            console.log(error.message)
-                        } else {
-                            console.log('Все ок')
-                            console.log(data.phone)
+                    <ConfigProvider
+                        theme={{
+                        token: {
+                            // Seed Token
+                            // colorPrimary: 'gray'
+                            colorPrimary: '#AB3534'
+                        },
+                        components: {
+                            Select: {
+                            borderRadius: 0,
+                            },
+                            Checkbox: {
+                            colorPrimary: '#AB3534'
+                            }
                         }
-                    }} className="w-[520px] 2lg:w-full" action="">
-                        <div className="mb-9 sm:mb-5"><input onChange={(e) => {
-                            setData({...data, name: e.target.value})
-                        }} value={data.name} type='text'
-                                                             className="w-full font-title font-medium bg-inherit focus:outline-none border-b border-[#696969] h-[27px] transition-colors duration-300 focus:border-red caret-red"
-                                                             placeholder="Полное имя"/></div>
+                        }}
+                    >
+                    <Antform name='form' onFinish={onFinish} onFinishFailed={onFinishFailed} className="w-[520px] 2lg:w-full" action="">
                         <div className="mb-9 sm:mb-5">
-                            <InputMask
+                            <Antform.Item name="name" rules={[{required: true, message: 'Пожалуйста укажите ваше имя'}]}>
+                                <Input type='text' className="rounded-none border-l-0 border-r-0 border-t-0 font-title font-medium caret-red" style={{ boxShadow: 'none' }} placeholder="Полное имя"/>
+                            </Antform.Item>
+                        </div>
+                        <div className="mb-9 sm:mb-5">
+                            <Antform.Item name="phone" rules={[{required: true, message: 'Пожалуйста укажите ваш номер телефона'}]}>
+                                <Input type='text' className="rounded-none border-l-0 border-r-0 border-t-0 font-title font-medium caret-red" style={{ boxShadow: 'none' }} placeholder="Номер телефона"/>
+                            </Antform.Item>
+                            {/* <InputMask
                                 mask="+7(999)999-99-99"
                                 placeholder="Номер телефона"
                                 className="w-full font-title font-medium bg-inherit focus:outline-none border-b border-[#696969] h-[27px] transition-colors duration-300 focus:border-red caret-red"
@@ -108,26 +101,28 @@ export default function Form() {
                                 }}
                                 value={data.phone}
                                 type={'tel'}
-                            />
+                            /> */}
                         </div>
-                        <div className="mb-9 sm:mb-5"><input onChange={(e) => {
-                            setData({...data, mail: e.target.value})
-                        }} value={data.mail} type='email'
-                                                             className="w-full font-title font-medium bg-inherit focus:outline-none border-b border-[#696969] h-[27px] transition-colors duration-300 focus:border-red caret-red"
-                                                             placeholder="Email адрес"/></div>
-                        <div className="mb-[60px] sm:mb-10"><input onChange={(e) => {
-                            setData({...data, message: e.target.value})
-                        }} value={data.message} type='text'
-                                                                   className="w-full font-title font-medium bg-inherit focus:outline-none border-b border-[#696969] h-[79px] transition-colors duration-300 focus:border-red caret-red"
-                                                                   placeholder="Сообщение"/></div>
-                        <button type='submit'
-                                className='bg-red hover:bg-light-red transition-colors duration-300 cursor-pointer w-fit rounded-[4px] px-6 py-4 sm:px-4 sm:py-3'>
-                            <div className="flex font-semibold text-[white]"><Image className="mr-3" src="/send.svg"
-                                                                                    width={16} height={15}
-                                                                                    alt="Send"/> Отправить
-                            </div>
-                        </button>
-                    </form>
+                        <div className="mb-9 sm:mb-5">
+                            <Antform.Item name="email" rules={[{required: true, message: 'Пожалуйста укажите ваш адрес электронной почты', type: 'email'}]}>
+                                <Input type='text' className="rounded-none border-l-0 border-r-0 border-t-0 font-title font-medium caret-red" style={{ boxShadow: 'none' }} placeholder="Email адрес"/>
+                            </Antform.Item>
+                        </div>
+                        <div className="mb-[60px] sm:mb-10">
+                            <Antform.Item name="message" rules={[{required: true, message: 'Пожалуйста укажите сообщение', min: 5}]}>
+                                <Input.TextArea rows={2} className="rounded-none border-l-0 border-r-0 border-t-0 font-title h-20 max-h-20 text-start font-medium caret-red" style={{ boxShadow: 'none', resize: 'none' }} placeholder="Сообщение"/>
+                            </Antform.Item>
+                        </div>
+                        <Antform.Item>
+                                <Button type="primary" htmlType="submit" className=' bg-red px-6 py-4 h-fit w-fit'>
+                                <div className="flex font-semibold text-[white]"><Image className="mr-3" src="/send.svg"
+                                                                                                width={16} height={15}
+                                                                                                alt="Send"/> Отправить
+                                        </div>
+                                </Button>
+                        </Antform.Item>
+                    </Antform>
+                    </ConfigProvider>
                 </div>
             </div>
         </>

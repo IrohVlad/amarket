@@ -2,13 +2,14 @@
 import {Fragment, useState} from 'react'
 import {Dialog, Disclosure, Popover, Transition} from '@headlessui/react'
 import {
-    ArrowPathIcon,
     Bars3Icon,
-    ChartPieIcon,
-    CursorArrowRaysIcon,
-    FingerPrintIcon,
-    SquaresPlusIcon,
-    XMarkIcon,
+    InformationCircleIcon,
+    BriefcaseIcon,
+    UserIcon,
+    QuestionMarkCircleIcon,
+    ChatBubbleLeftEllipsisIcon,
+    GlobeAltIcon,
+    PaperAirplaneIcon
 } from '@heroicons/react/24/outline'
 import {ChevronDownIcon, PhoneIcon, PlayCircleIcon} from '@heroicons/react/20/solid'
 import Image from "next/image";
@@ -16,11 +17,15 @@ import {usePathname} from "next/navigation";
 import Link from "next/link";
 
 const products = [
-    {name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon},
-    {name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon},
-    {name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon},
-    {name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon},
-    {name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon},
+    {name: 'Правила', href: '/policy', icon: InformationCircleIcon},
+    {name: 'Наши работы', href: '/portfolio', icon: BriefcaseIcon},
+    {name: 'Клиенты', href: '/clients', icon: UserIcon},
+    {name: 'Центр помощи', href: '/help', icon: ChatBubbleLeftEllipsisIcon},
+    {name: 'Частые вопросы', href: '/questions', icon: QuestionMarkCircleIcon},
+]
+const shipment = [
+    {name: 'Оформить отправление', href: '/shipment', icon: PaperAirplaneIcon},
+    {name: 'Где мы работаем', href: '/shipment/network', icon: GlobeAltIcon},
 ]
 const callsToAction = [
     {name: 'Watch demo', href: '#', icon: PlayCircleIcon},
@@ -101,7 +106,6 @@ export default function Example() {
                                                     {item.name}
                                                     <span className="absolute inset-0"/>
                                                 </a>
-                                                <p className="mt-1 text-gray-600">{item.description}</p>
                                             </div>
                                         </div>
                                     ))}
@@ -140,7 +144,7 @@ export default function Example() {
                             <Popover.Panel
                                 className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                                 <div className="p-4">
-                                    {products.map((item) => (
+                                    {shipment.map((item) => (
                                         <div
                                             key={item.name}
                                             className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
@@ -155,7 +159,6 @@ export default function Example() {
                                                     {item.name}
                                                     <span className="absolute inset-0"/>
                                                 </a>
-                                                <p className="mt-1 text-gray-600">{item.description}</p>
                                             </div>
                                         </div>
                                     ))}
@@ -188,7 +191,7 @@ export default function Example() {
                     <button className="bg-light-red text-white w-24 h-9 rounded-lg font-semibold text-sm">Войти</button>
                 </div>
             </nav>
-            <Dialog as="div" className="max-lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+            <Dialog as="div" className="max-lg:hidden text-h-grey" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
                 <div className="fixed inset-0 z-10"/>
                 <Dialog.Panel
                     className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 pt-16 max-w-sm ring-1 ring-gray-900/10">
@@ -207,7 +210,7 @@ export default function Example() {
                                       className={`link ${pathname === '/market' ? 'text-black' : ''} hover:text-black -mx-3 block rounded-lg px-3 py-2`}>
                                     <span>Маркет</span>
                                 </Link>
-                                <Disclosure as="div" className="-mx-3">
+                                <Disclosure as="div" className="-mx-3 text-h-grey">
                                     {({open}) => (
                                         <>
                                             <Disclosure.Button
@@ -219,7 +222,7 @@ export default function Example() {
                                                 />
                                             </Disclosure.Button>
                                             <Disclosure.Panel className="mt-2 space-y-2">
-                                                {[...products, ...callsToAction].map((item) => (
+                                                {[...products].map((item) => (
                                                     <Disclosure.Button
                                                         key={item.name}
                                                         as="a"
@@ -245,7 +248,7 @@ export default function Example() {
                                                 />
                                             </Disclosure.Button>
                                             <Disclosure.Panel className="mt-2 space-y-2">
-                                                {[...products, ...callsToAction].map((item) => (
+                                                {[...shipment].map((item) => (
                                                     <Disclosure.Button
                                                         key={item.name}
                                                         as="a"
