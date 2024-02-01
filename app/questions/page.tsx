@@ -182,14 +182,14 @@ export default function Questions() {
     <>
         <ServiceHero title='Часто задаваемые вопросы' routes={[{title:'Главная', href: '/'}, {title:'Часто задаваемые вопросы', href: 'questions'}]} className='relative after:absolute after:block bg-[#C4C4C4] after:top-0 after:left-0 after:w-full after:h-full after:z-100 after:bg-[linear-gradient(90deg,rgba(171,53,52,0.5)0%,rgba(255,7,5,0.5)200%)] after:bg-opacity-50'     />
         <section>
-            <div className='max-w-c-full mt-[120px] lg:mt-0 mb-6 mx-auto p-6 lg:px-8'>
-                <h2 className=' font-title mb-20 text-black font-bold text-2xl max-w-[550px] sm:text-xl ss:text-lg'>
+            <div className='max-w-c-full mt-[120px] lg:mt-0 mb-6 lg:mb-0 mx-auto p-6 lg:px-8'>
+                <h2 className=' font-title mb-20 lg:mb-10 text-black font-bold text-2xl max-w-[550px] sm:text-xl ss:text-lg'>
                     О чем нас спрашивают наши клиенты
                 </h2>
                 <Carousel active={currentIndex} setter={setCurrentIndex} data={data} className=''/>
             </div>
         </section>
-        <section className='mb-[160px]'>
+        <section className='mb-[160px] lg:mb-0'>
           <div className='max-w-c-full mb-6 mx-auto p-6 lg:px-8'>
             <QuestionAnswerBlock items={data[currentIndex].items}/>
           </div>

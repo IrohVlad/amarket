@@ -6,9 +6,9 @@ interface IAdvantagesProps{
 
 export default function Advantages({className}: IAdvantagesProps ) {
     return (
-        <section className={className}>
-            <div className="flex items-center justify-center h-[332px] max-w-c-full w-full mx-auto gap-44">
-                <div>
+        <section className={ ' px-6 lg:px-8' +className}>
+            <div className="flex items-center justify-center h-[332px] max-w-c-full w-full mx-auto gap-44 lg:gap-10 lg:justify-between md:flex-col md:py-6 md:h-fit md:gap-[60px]">
+                <div className="md:flex md:flex-col md:items-center">
                     <div className="flex items-center mb-[15px]">
                         <div className="mr-4">
                             <Image src='/car2.svg' alt="" width={44} height={44} className="mr-4" />
@@ -21,7 +21,7 @@ export default function Advantages({className}: IAdvantagesProps ) {
                         Завершенных доставок
                     </div>
                 </div>
-                <div>
+                <div className="md:flex md:flex-col md:items-center">
                     <div className="flex items-center mb-[15px]">
                         <div className="mr-4">
                             <Image src='/Group.svg' alt="" width={44} height={44} className="mr-4" />
@@ -34,7 +34,7 @@ export default function Advantages({className}: IAdvantagesProps ) {
                         Довольных клиентов
                     </div>
                 </div>
-                <div>
+                <div className="md:flex md:flex-col md:items-center">
                     <div className="flex items-center mb-[15px]">
                         <div className="mr-4">
                             <Image src='/people.svg' alt="" width={44} height={44} className="mr-4" />

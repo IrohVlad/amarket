@@ -91,7 +91,7 @@ export default function Example() {
                             <Popover.Panel
                                 className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                                 <div className="p-4">
-                                    {products.map((item) => (
+                                    {shipment.map((item) => (
                                         <div
                                             key={item.name}
                                             className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
@@ -110,18 +110,7 @@ export default function Example() {
                                         </div>
                                     ))}
                                 </div>
-                                <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-                                    {callsToAction.map((item) => (
-                                        <a
-                                            key={item.name}
-                                            href={item.href}
-                                            className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
-                                        >
-                                            <item.icon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true"/>
-                                            {item.name}
-                                        </a>
-                                    ))}
-                                </div>
+                                
                             </Popover.Panel>
                         </Transition>
                     </Popover>
@@ -144,7 +133,7 @@ export default function Example() {
                             <Popover.Panel
                                 className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                                 <div className="p-4">
-                                    {shipment.map((item) => (
+                                    {products.map((item) => (
                                         <div
                                             key={item.name}
                                             className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
@@ -163,18 +152,7 @@ export default function Example() {
                                         </div>
                                     ))}
                                 </div>
-                                <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-                                    {callsToAction.map((item) => (
-                                        <a
-                                            key={item.name}
-                                            href={item.href}
-                                            className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
-                                        >
-                                            <item.icon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true"/>
-                                            {item.name}
-                                        </a>
-                                    ))}
-                                </div>
+                                
                             </Popover.Panel>
                         </Transition>
                     </Popover>
@@ -187,9 +165,9 @@ export default function Example() {
                         <span>Блог</span>
                     </Link>
                 </Popover.Group>
-                <div className="flex flex-1 justify-end lg:hidden">
+                <Link href={'/login'} className="flex flex-1 justify-end lg:hidden">
                     <button className="bg-light-red text-white w-24 h-9 rounded-lg font-semibold text-sm">Войти</button>
-                </div>
+                </Link>
             </nav>
             <Dialog as="div" className="max-lg:hidden text-h-grey" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
                 <div className="fixed inset-0 z-10"/>
@@ -222,7 +200,7 @@ export default function Example() {
                                                 />
                                             </Disclosure.Button>
                                             <Disclosure.Panel className="mt-2 space-y-2">
-                                                {[...products].map((item) => (
+                                                {[...shipment].map((item) => (
                                                     <Disclosure.Button
                                                         key={item.name}
                                                         as="a"
@@ -248,7 +226,7 @@ export default function Example() {
                                                 />
                                             </Disclosure.Button>
                                             <Disclosure.Panel className="mt-2 space-y-2">
-                                                {[...shipment].map((item) => (
+                                                {[...products].map((item) => (
                                                     <Disclosure.Button
                                                         key={item.name}
                                                         as="a"
@@ -271,9 +249,9 @@ export default function Example() {
                                     <span>Блог</span>
                                 </Link>
                             </div>
-                            <div className="py-6">
+                            <Link href={'/login'} className="py-6">
                                 <button className="bg-light-red text-white w-24 h-9 rounded-lg font-semibold text-sm">Войти</button>
-                            </div>
+                            </Link>
                         </div>
                     </div>
                 </Dialog.Panel>

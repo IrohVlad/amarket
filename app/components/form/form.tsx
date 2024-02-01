@@ -1,8 +1,7 @@
 "use client"
-import React, {useState, useEffect, InputHTMLAttributes, ReactNode} from 'react'
+import React from 'react'
 import Image from 'next/image'
 import { Button, Form as Antform, Input, ConfigProvider } from 'antd';
-import InputMask from 'react-input-mask';
 import './styles.css'
 
 const onFinish = (values: any) => {
@@ -92,16 +91,6 @@ export default function Form() {
                             <Antform.Item name="phone" rules={[{required: true, message: 'Пожалуйста укажите ваш номер телефона'}]}>
                                 <Input type='text' className="rounded-none border-l-0 border-r-0 border-t-0 font-title font-medium caret-red" style={{ boxShadow: 'none' }} placeholder="Номер телефона"/>
                             </Antform.Item>
-                            {/* <InputMask
-                                mask="+7(999)999-99-99"
-                                placeholder="Номер телефона"
-                                className="w-full font-title font-medium bg-inherit focus:outline-none border-b border-[#696969] h-[27px] transition-colors duration-300 focus:border-red caret-red"
-                                onChange={(e) => {
-                                    setData({...data, phone: e.target.value})
-                                }}
-                                value={data.phone}
-                                type={'tel'}
-                            /> */}
                         </div>
                         <div className="mb-9 sm:mb-5">
                             <Antform.Item name="email" rules={[{required: true, message: 'Пожалуйста укажите ваш адрес электронной почты', type: 'email'}]}>

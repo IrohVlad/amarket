@@ -5,7 +5,7 @@ import './carousel.css'
 import Image from 'next/image';
 
 
-export default function Carousel({data, setter, active, column, className}: any) {
+export default function Carousel({data, setter, active, column, className, small}: any) {
     useEffect(() => {
         const interval = setInterval(() => {
             setter((prevIndex: any) => (prevIndex + 1) % data.length);
@@ -18,12 +18,12 @@ export default function Carousel({data, setter, active, column, className}: any)
         setter(index);
     };
     return (
-            <div className={`carousel-buttons lg:flex-col lg:gap-10 ${column && 'flex-col gap-10'} ` + className}>
+            <div className={`carousel-buttons ${ !small && 'lg:flex-col lg:gap-10'} ${column && 'flex-col gap-10'} ` + className}>
                 {data?.map((item: any, index: any) => {
                     return (
                         <button
                             key={index}
-                            className={`carousel-button flex items-center gap-3 lg:!w-fit ${active === index ? 'active' : ''} ${column && 'w-full'}`}
+                            className={`carousel-button flex items-center gap-3 ${!small && 'lg:!w-fit'} ${active === index ? 'active' : ''} ${column && 'w-full'}`}
                             onClick={() => handleButtonClick(index)}
                             style={column ? {} : {width: `calc(100% / ${data.length})`}}
                         >
