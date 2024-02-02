@@ -6,7 +6,7 @@ import ServiceCard from '../serviceCard/serviceCard'
 export default function ServicesCards() {
   return (
     <section className=" relative">
-        <div className="max-w-c-full m-auto relative z-20 px-6 py-16 lg:px-10">
+        <div className="max-w-c-full m-auto relative z-[3] px-6 py-16 lg:px-10">
             <div className="flex items-center justify-between mb-[100px] lg:flex-col lg:items-start">
                 <h2 className=" font-title font-bold text-2xl sm:text-xl text-[black]">Что мы предлогаем</h2>
                 <div className=" text-[#6C6C6C] leading-[26px] max-w-[520px] lg:max-w-none lg:mt-[30px] font-open">Предоставляем высококачественные комплексные логистические услуги по транспортировке по минимальной стоимости.</div>
@@ -19,7 +19,7 @@ export default function ServicesCards() {
                 <ServiceCard title='Таможенное оформление' img_url='/services/unsplash_DEMrRuvJvqo (1).png' route_url='/services/customs' />
             </div>
         </div>
-        <div className=" bg-[#F8F8F8] h-[809px] absolute bottom-0 z-10 w-full"></div>
+        <div className=" bg-[#F8F8F8] h-[809px] absolute bottom-0 z-[2] w-full"></div>
     </section>
   )
 }

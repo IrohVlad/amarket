@@ -158,7 +158,7 @@ export default function RegistrationForm() {
             Tinkoff
         </div>
       </div>
-      <div className='font-title font-medium'>У вас уже есть аккаунт? <Link href='/login' className=' text-[#3891E3]'>Войти</Link></div>
+      <div className='font-title font-medium text-center'>У вас уже есть аккаунт? <Link href='/login' className=' text-[#3891E3]'>Войти</Link></div>
     </Form>}
     { step == 1 && <Form
     name='registration form' 
@@ -214,7 +214,7 @@ export default function RegistrationForm() {
       <Form.Item
         label='Код приглашения'
         name='code'
-        className='w-full'
+        className='w-full mb-20'
       >
         <Input placeholder='Если у вас есть код, укажите его' className='bg-[#F4F4F4]' style={{boxShadow: 'none'}}/>
       </Form.Item>
@@ -227,7 +227,7 @@ export default function RegistrationForm() {
                                 </Button>
       </Form.Item>
 
-      <div className='font-title font-medium'>У вас уже есть аккаунт? <Link href='/login' className=' text-[#3891E3]'>Войти</Link></div>
+      <div className='font-title font-medium text-center'>У вас уже есть аккаунт? <Link href='/login' className=' text-[#3891E3]'>Войти</Link></div>
     </Form>}
     { step == 3 && <div
   className=' border-[#D9D9D9] border-[1px] px-16 pt-[70px] pb-14 bg-white rounded-2xl w-[600px] flex flex-col items-center my-16 md:w-full md:rounded-none md:border-0 md:my-0 sm:px-5'>

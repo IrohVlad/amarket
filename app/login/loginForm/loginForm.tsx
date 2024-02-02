@@ -133,7 +133,7 @@ export default function LoginForm() {
             Tinkoff
         </div>
       </div>
-      <div className='font-title font-medium'>У вас еще нет аккаунта? <Link href='/registration' className=' text-[#3891E3]'>Зарегистрироваться</Link></div>
+      <div className='font-title font-medium text-center'>У вас еще нет аккаунта? <Link href='/registration' className=' text-[#3891E3]'>Зарегистрироваться</Link></div>
     </Form>
     </ConfigProvider>
   )
