@@ -51,9 +51,9 @@ export default function LoginForm() {
         name='email'
         rules={[{type: 'email', message: 'Введите ваш адрес электронной почты'},({getFieldValue})=>({
             validator(_, value){
-                if(!value && !getFieldValue('phone') && !getFieldValue('password')){
+                if(!value && !getFieldValue('phone')){
                     return Promise.reject(new Error('Введите ваш адрес электронной почты'))
-                } else if(value && (getFieldValue('phone') || getFieldValue('password'))){
+                } else if(value && getFieldValue('phone')){
                     return Promise.reject(new Error('Введите только один набор данных'))
                 } else {
                     return Promise.resolve()
@@ -71,7 +71,7 @@ export default function LoginForm() {
         name='phone'
         rules={[({getFieldValue})=>({
             validator(_, value){
-                if((!value && !getFieldValue('email') || (!value && getFieldValue('password')))){
+                if(!value && !getFieldValue('email')){
                     return Promise.reject(new Error('Введите ваш номер телефона'))
                 } else if(value && getFieldValue('email')){
                     return Promise.reject(new Error('Введите только один набор данных'))
@@ -90,10 +90,8 @@ export default function LoginForm() {
         name='password'
         rules={[({getFieldValue})=>({
             validator(_, value){
-                if((!value && !getFieldValue('email')) || (!value && getFieldValue('phone'))){
+                if(!value){
                     return Promise.reject(new Error('Введите ваш пароль'))
-                } else if(value && getFieldValue('email')){
-                    return Promise.reject(new Error('Введите только один набор данных'))
                 } else {
                     return Promise.resolve()
                 }

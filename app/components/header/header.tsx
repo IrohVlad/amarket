@@ -1,6 +1,8 @@
 'use client'
 import {Fragment, useState} from 'react'
 import {Dialog, Disclosure, Popover, Transition} from '@headlessui/react'
+import type { MenuProps } from 'antd';
+import { Dropdown, Space } from 'antd';
 import {
     Bars3Icon,
     InformationCircleIcon,
@@ -27,10 +29,6 @@ const shipment = [
     {name: 'Оформить отправление', href: '/shipment', icon: PaperAirplaneIcon},
     {name: 'Где мы работаем', href: '/shipment/network', icon: GlobeAltIcon},
 ]
-const callsToAction = [
-    {name: 'Watch demo', href: '#', icon: PlayCircleIcon},
-    {name: 'Contact sales', href: '#', icon: PhoneIcon},
-]
 
 function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
@@ -44,7 +42,7 @@ export default function Example() {
         <header className="bg-white sticky z-50 top-0 left-0 text-black">
             <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 h-16 lg:px-8" aria-label="Global">
                 <div className="flex flex-1">
-                    <a href="#" className="-m-1.5 p-1.5">
+                    <a href="/" className="-m-1.5 p-1.5">
                         <span className="sr-only">Your Company</span>
                         <Image src="/logo.svg" alt="logo" width={110} height={23}/>
                     </a>
@@ -52,8 +50,8 @@ export default function Example() {
                 <div className="hidden lg:flex">
                     <button
                         type="button"
-                        className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-                        onClick={() => setMobileMenuOpen(true)}
+                        className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 relative z-[auto]"
+                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                     >
                         <span className="sr-only">Open main menu</span>
                         <Bars3Icon className="h-6 w-6" aria-hidden="true"/>

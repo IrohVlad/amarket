@@ -9,7 +9,9 @@ label::before{
     border-radius: 5px !important;
     box-shadow: none !important;
 }
-
+[type="password"]{
+    background-color: inherit;
+}
 .ant-checkbox .ant-checkbox-inner {
     height: 16px !important;
     width: 16px !important;

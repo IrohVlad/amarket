@@ -45,7 +45,7 @@ const Footer = () => {
                             </div>
                         </form>
                     </div>
-                    <div className="flex justify-between text-base text-a-grey w-4/12 lg:w-fit lg:mb-10 lg:gap-10 ss:flex-wrap">
+                    <div className="flex justify-between text-base text-a-grey w-4/12 lg:w-fit lg:mb-10 lg:gap-10 ss:justify-start ss:flex-wrap">
                         <div className="flex flex-col">
                             <h4 className="text-white font-semibold pb-4">Компания</h4>
                             <Link href="about" className="pb-3 hover:text-white"><span>О нас</span></Link>
