@@ -31,7 +31,7 @@ export default function Vision() {
     return (
         <section className='w-full relative'>
             <div className='max-w-c-full m-auto h-fit flex flex-col justify-center'>
-                <Carousel data={data} setter={setCurrentIndex} active={currentIndex} />
+                <Carousel small={true} className="" data={data} setter={setCurrentIndex} active={currentIndex} />
                 <VisionContent list={data[currentIndex].list} description={data[currentIndex].description} button={data[currentIndex].button}/>
             </div>
         </section>

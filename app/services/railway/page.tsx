@@ -9,7 +9,7 @@ import Trucks from '@/app/components/trucks/trucks'
 export default function Railway() {
   return (
     <>
-      <ServiceHero routes={['Главная', 'Услуги', 'Железнодорожные перевозки']} title="Железнодорожные перевозки" img_url='/services/home-delivery-service-and-working-service-mind.png'/>
+      <ServiceHero routes={[{title:'Главная', href: '/'}, {title:'Услуги', href: '/services'}, {title:'Железнодорожные перевозки', href: 'railway'}]} title="Железнодорожные перевозки" img_url='/services/home-delivery-service-and-working-service-mind.png'/>
       <PageWithSidebar>
       <h2 className=" text-[44px] font-bold max-w-[550px] mb-[40px] text-black sm:text-xl ss:text-[25px]">Железнодорожные  перевозки</h2>
                 <p className="mb-[36px] text-[16px] text-[#6C6C6C] leading-[26px]">Наши услуги по грузоперевозкам быстры, эффективны и надежны, даже в этих сложных условиях. Мы доставляем товары вовремя, минуя пробки на границах, и работаем со своими собственными службами доставки в 20 разных странах. Мы можем увеличивать свои возможности в соответствии с потребностями клиентов.</p>

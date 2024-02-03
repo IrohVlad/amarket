@@ -5,13 +5,13 @@ import Advantages from "@/app/components/advantages/advantages";
 const About = () => {
     return (
         <div>
-            <div className="h-full flex flex-auto flex-col px-6 pt-9 pb-16 relative">
-                <div className="max-w-c-full w-full mx-auto flex flex-auto justify-between">
-                    <div className="w-1/2 pr-8 flex flex-col justify-between">
+            <div className="h-full flex flex-auto flex-col px-6 pt-9 pb-16 lg:pb-4 relative">
+                <div className="max-w-c-full w-full mx-auto flex flex-auto justify-between lg:flex-col">
+                    <div className="w-1/2 pr-8 flex flex-col justify-between lg:w-full">
                         <div>
-                            <span className="text-plus font-semibold">О компании</span>
-                            <h1 className="text-xl font-bold max-w-[450px] pt-5 pb-4">Ведущий мировой бизнес</h1>
-                            <p className="text-h-grey text-base font-text max-w-[520px] pb-7">Мы сформировали команду
+                            <span className="text-plus font-title font-semibold text-black">О компании</span>
+                            <h1 className="text-xl font-title font-bold max-w-[450px] pt-5 pb-4 text-black sm:text-xl ss:text-lg">Ведущий мировой бизнес</h1>
+                            <p className="text-h-grey text-base font-text max-w-[520px] lg:max-w-none pb-7">Мы сформировали команду
                                 сотрудников, прошедших профессиональное обучение, которые готовы
                                 эффективно справляться с любыми возникающими ситуациями, обеспечивая спокойствие наших
                                 клиентов.</p>
@@ -22,9 +22,9 @@ const About = () => {
                         </div>
                     </div>
                     <div>
-                        <Image src={"/about/cargo-ship.png"} alt={"ship"} width={630} height={847}/>
+                        <Image src={"/about/cargo-ship.png"} alt={"ship"} width={630} height={847} className="lg:w-full lg:h-[400px] object-cover object-center"/>
                     </div>
-                    <div className="absolute bg-bg-grey max-w-screen w-full h-3/5 -z-10 bottom-0 left-0"/>
+                    <div className="absolute bg-bg-grey max-w-screen w-full h-3/5 -z-10 bottom-0 left-0 lg:bg-white"/>
                 </div>
             </div>
             <Advantages></Advantages>

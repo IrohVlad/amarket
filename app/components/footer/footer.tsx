@@ -20,16 +20,16 @@ const Footer = () => {
     };
 
     return (
-        <footer className='bg-dark-grey flex flex-col h-96 px-6'>
-            <div className="max-w-c-full m-auto w-full h-4/5 flex flex-col justify-between">
-                <div className="flex justify-between">
-                    <div className="w-1/2">
+        <footer className='bg-dark-grey flex flex-col h-96 lg:h-fit px-6 lg:py-6'>
+            <div className="max-w-c-full m-auto w-full h-4/5 lg:h-fit flex flex-col justify-between">
+                <div className="flex justify-between lg:flex-col">
+                    <div className="w-1/2 lg:w-fit lg:mb-10">
                         <Image src="/logo.svg" alt="logo" width={110} height={22}/>
                         <form onSubmit={handleSubmit} className="flex flex-col pt-7">
                             <h3 className="text-white font-semibold text-lg pb-2">Подпишитесь на рассылку</h3>
                             <label htmlFor="email" className="text-base text-t-grey pb-4">Мы будем отправлять вам полезную
                                 информацию раз в неделю</label>
-                            <div className="flex">
+                            <div className="flex ss:flex-col ss:gap-4">
                                 <input
                                     id="email"
                                     type="email"
@@ -37,7 +37,7 @@ const Footer = () => {
                                     value={email}
                                     onChange={handleChange}
                                     required
-                                    className="outline-none pl-4 h-12 w-72 rounded-lg mr-4"
+                                    className="outline-none pl-4 h-12 w-72 ss:w-full rounded-lg mr-4"
                                 />
                                 <button type="submit"
                                         className="bg-red text-white w-36 h-12 rounded-lg font-semibold text-base">Отправить
@@ -45,25 +45,25 @@ const Footer = () => {
                             </div>
                         </form>
                     </div>
-                    <div className="flex justify-between text-base text-a-grey w-4/12">
+                    <div className="flex justify-between text-base text-a-grey w-4/12 lg:w-fit lg:mb-10 lg:gap-10 ss:justify-start ss:flex-wrap">
                         <div className="flex flex-col">
                             <h4 className="text-white font-semibold pb-4">Компания</h4>
-                            <Link href="/" className="pb-3 hover:text-white"><span>О нас</span></Link>
-                            <Link href="/" className="pb-3 hover:text-white"><span>Карьера</span></Link>
-                            <Link href="/" className="hover:text-white"><span>Контакты</span></Link>
+                            <Link href="about" className="pb-3 hover:text-white"><span>О нас</span></Link>
+                            <Link href="about" className="pb-3 hover:text-white"><span>Карьера</span></Link>
+                            <Link href="contacts" className="hover:text-white"><span>Контакты</span></Link>
                         </div>
                         <div className="flex flex-col">
                             <h4 className="text-white font-semibold pb-4">Информация</h4>
-                            <Link href="/" className="pb-3 hover:text-white"><span>Правила</span></Link>
-                            <Link href="/" className="pb-3 hover:text-white"><span>Наши работы</span></Link>
-                            <Link href="/" className="hover:text-white"><span>Клиенты</span></Link>
+                            <Link href="policy" className="pb-3 hover:text-white"><span>Правила</span></Link>
+                            <Link href="portfolio" className="pb-3 hover:text-white"><span>Наши работы</span></Link>
+                            <Link href="clients" className="hover:text-white"><span>Клиенты</span></Link>
                         </div>
                         <div className="flex flex-col">
                             <h4 className="text-white font-semibold pb-4">Ресурсы</h4>
                             <Link href="/" className="pb-3 hover:text-white"><span>Блог</span></Link>
                             <Link href="/" className="pb-3 hover:text-white"><span>Мероприятия</span></Link>
-                            <Link href="/" className="pb-3 hover:text-white"><span>Центр помощи</span></Link>
-                            <Link href="/" className="hover:text-white"><span>Частые вопросы</span></Link>
+                            <Link href="help" className="pb-3 hover:text-white"><span>Центр помощи</span></Link>
+                            <Link href="questions" className="hover:text-white"><span>Частые вопросы</span></Link>
                         </div>
                     </div>
                 </div>

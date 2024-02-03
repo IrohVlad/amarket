@@ -10,7 +10,7 @@ import Trucks from '@/app/components/trucks/trucks'
 export default function Storage() {
   return (
     <>
-        <ServiceHero title='Складские услуги' routes={['Главная', 'Услуги', 'Складские услуги']} img_url='/services/young-warehouse-workers-working-together-2022-03-30-20-23-36-utc2.png' />
+        <ServiceHero title='Складские услуги' routes={[{title:'Главная', href: '/'}, {title:'Услуги', href: '/services'}, {title:'Складские услуги', href: 'storage'}]} img_url='/services/young-warehouse-workers-working-together-2022-03-30-20-23-36-utc2.png' />
         <PageWithSidebar>
         <h2 className=" text-[44px] font-bold max-w-[550px] mb-[40px] text-black sm:text-xl ss:text-[25px]">Складские услуги</h2>
                 <p className="mb-[36px] text-[16px] text-[#6C6C6C] leading-[26px]">С мировой сетью и современными объектами, наша служба складского хранения готова работать с вашей логистической цепью, будь то на начальном этапе или при доставке. Воспользовавшись нашими услугами по складированию и распределению, вы уменьшите сложность процессов и получите быстроту, контроль и видимость. Это также позволит вам снизить стоимость доставки.</p>
