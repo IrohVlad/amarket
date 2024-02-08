@@ -1,29 +1,14 @@
-'use client'
 import React from 'react'
 import MarketNavbar from '@/app/components/marketNavbar/marketNavbar'
 import Image from 'next/image'
 import Button from '@/app/components/button/button'
 import Link from 'next/link'
-import Carousel from '@/app/components/carousel/carousel'
-
-const data = [
-  {
-    title: 'Описание'
-  },
-  {
-    title: 'Оплата'
-  },
-  {
-    title: 'Доставка'
-  }
-]
+import MarketProductContent from '../marketProductContent/marketProductContent'
 
 export default function Page({params, searchParams}: any) {
-  const [index, setIndex] = React.useState(0)
   return (
     <>
       <MarketNavbar searchParams={searchParams}/>
-      <div className=' text-black'>{params.slug}</div>
       <section className='py-6 lg:py-8'>
         <div className='max-w-c-full m-auto p-7 lg:px-8 shadow-md rounded-[10px] border-[1px] border-[#D9D9D9]'>
           <div className='grid grid-cols-[500px_1fr] gap-3 min-h-[500px] mb-20'>
@@ -78,12 +63,7 @@ export default function Page({params, searchParams}: any) {
               </div>
             </div>
           </div>
-          <div>
-            <Carousel data={data} active={index} setter={setIndex} className="w-[50%] text-lg" />
-          </div>
-          <div >
-
-          </div>
+          <MarketProductContent/>
         </div>
       </section>
     </>
