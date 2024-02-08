@@ -18,7 +18,7 @@ const config: Config = {
       'h-grey': '#6C6C6C',
       'a-grey': '#AFAFAF',
       'dark-grey': '#2B2B2B',
-      'black': '#000000',
+      'black': '#242323',
     },
     screens: {
       '2xl': {'max': '1535px'},

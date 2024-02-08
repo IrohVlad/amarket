@@ -2,10 +2,14 @@
 import React from 'react'
 import { Input, ConfigProvider } from 'antd'
 import './style.css'
+import { useRouter } from 'next/navigation'
 
 export default function MarketSearch() {
+  const router = useRouter()
   return (
-    <div className='market-search max-w-[535px] w-full'>
+    <div onClick={()=>{
+      router.push('/market?take=10')
+    }} className='market-search max-w-[535px] w-full'>
           <ConfigProvider
                         theme={{
                         token: {

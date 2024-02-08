@@ -4,7 +4,7 @@ const nextConfig = {
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: 'localhost',
+                hostname: 'my-apple-store.ru',
                 port: '',
                 pathname: '**',
             },
