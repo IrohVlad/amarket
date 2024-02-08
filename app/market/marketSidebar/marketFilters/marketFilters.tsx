@@ -21,7 +21,7 @@ export default function MarketFilters({searchParams}: any) {
     <div>
         <div className='font-title font-semibold text-black mb-3'>Фильтры</div>
         <Checkbox onChange={onChange} checked={searchParams.sale} value={'sale'}>Лютые скидки</Checkbox>
-        <Checkbox onChange={onChange} checked={searchParams.overprice} value={'overprice'}>Лютыый оверпрайс</Checkbox>
+        <Checkbox onChange={onChange} checked={searchParams.overprice} value={'overprice'}>Лютый оверпрайс</Checkbox>
     </div>
   )
 }

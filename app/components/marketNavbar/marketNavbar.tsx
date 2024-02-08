@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 export default function MarketNavbar({searchParams}: any) {
   return (
-    <section className='py-6 lg:py-8 shadow-sm'>
+    <section className='py-6 lg:py-8 shadow-md border-bg-grey '>
         <div className='max-w-c-full m-auto flex items-center gap-[35px] justify-between px-6 lg:px-8'>
           <Button className='px-7 py-2'>
             <div className=' text-title font-semibold text-sm'>Каталог</div>
