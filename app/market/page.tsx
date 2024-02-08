@@ -1,11 +1,10 @@
 import React from 'react'
 import MarketHero from '../components/marketHero/marketHero'
-import Button from '../components/button/button'
-import MarketSearch from '../components/marketSearch/marketSearch'
 import MarketProducts from './marketProducts/marketProducts'
 import MarketNavbar from '../components/marketNavbar/marketNavbar'
-import Link from 'next/link'
 import { ReadonlyURLSearchParams } from 'next/navigation'
+import { Pagination, ConfigProvider } from 'antd'
+import MarketSidebar from './marketSidebar/marketSidebar'
 type TypeMarket = {
   searchParams: Object
 }
@@ -35,14 +34,35 @@ export default async function Market({searchParams}: TypeMarket) {
           <div>Скидка до 45%</div>
         </div>
       </MarketHero>
+      <ConfigProvider
+                        theme={{
+                        token: {
+                            // Seed Token
+                            // colorPrimary: 'gray'
+                            colorPrimary: '#AB3534'
+                        },
+                        components: {
+                            Select: {
+                            borderRadius: 0,
+                            },
+                            Checkbox: {
+                            colorPrimary: '#AB3534'
+                            }
+                        }
+                        }}
+                    >
       <section className='py-6 lg:py-8'>
         <div className='relative max-w-c-full m-auto px-6 lg:px-8 grid grid-cols-[300px_1fr] gap-[25px]'>
-          <div className=' sticky top-20 min-h-[400px] h-fit shadow-md rounded-[10px] mb-10'>
-
-          </div>
+          <MarketSidebar searchParams={searchParams}/>
           <MarketProducts data={data}/>
         </div>
       </section>
+      <section className='py-6 lg:py-8'>
+        <div className='max-w-c-full m-auto px-6 lg:px-8 flex justify-center'>
+          <Pagination responsive={true} total={50} current={3} />
+        </div>
+      </section>
+      </ConfigProvider>
     </>
   )
 }
