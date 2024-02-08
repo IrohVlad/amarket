@@ -8,10 +8,12 @@ const data = [
       content: ''
     },
     {
-      title: 'Оплата'
+      title: 'Оплата',
+      content: ''
     },
     {
-      title: 'Доставка'
+      title: 'Доставка',
+      content: ''
     }
   ]
 

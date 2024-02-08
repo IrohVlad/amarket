@@ -1,9 +1,9 @@
 'use client'
 import React from 'react'
-// import Button from '../button/button'
+import Button from '../button/button'
 import MarketSearch from '../marketSearch/marketSearch'
 import Link from 'next/link'
-import { Cascader, Button } from 'antd'
+import { Cascader } from 'antd'
 import './style.css'
 
 const options = [
@@ -71,7 +71,12 @@ export default function MarketNavbar({searchParams}: any) {
   return (
     <section className='py-6 lg:py-8 shadow-md border-bg-grey '>
         <div className='max-w-c-full m-auto flex items-center gap-[35px] justify-between px-6 lg:px-8'>
-          <Cascader multiple options={options} className='katalog' style={{boxShadow: 'none'}} placeholder={'Каталог'}/>
+          <Cascader size='small' multiple options={options} className='katalog' style={{boxShadow: 'none'}}>
+            <Button className='px-7 py-2'>
+              <div className=' text-title font-semibold text-sm'>Каталог</div>
+            </Button>
+ 
+          </Cascader>
           <div className='market-search max-w-[535px] w-full'>
           <MarketSearch searchParams={searchParams}/>
           </div>
