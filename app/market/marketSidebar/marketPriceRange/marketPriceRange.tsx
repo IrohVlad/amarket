@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 
 export default function MarketPriceRange({searchParams}: any) {
     const router = useRouter()
-    const [ range, setRange] = useState([1000, 10000000])
+    const [ range, setRange] = useState([ +searchParams.min || 1000, +searchParams.max || 10000000])
     useEffect(()=>{
         const params = new URLSearchParams()
         Object.keys(searchParams).forEach((value: string) => {
@@ -13,7 +13,7 @@ export default function MarketPriceRange({searchParams}: any) {
         })
         params.set('min', String(range[0]))
         params.set('max', String(range[1]))
-        router.push(`/market?${params}`)
+        router.push(`/market?${params}`, {scroll: false})
     },[range])
   return (
     <>

@@ -3,7 +3,7 @@ import Button from '../button/button'
 import MarketSearch from '../marketSearch/marketSearch'
 import Link from 'next/link'
 
-export default function MarketNavbar() {
+export default function MarketNavbar({searchParams}: any) {
   return (
     <section className='py-6 lg:py-8 shadow-sm'>
         <div className='max-w-c-full m-auto flex items-center gap-[35px] justify-between px-6 lg:px-8'>
@@ -11,7 +11,7 @@ export default function MarketNavbar() {
             <div className=' text-title font-semibold text-sm'>Каталог</div>
           </Button>
           <div className='market-search max-w-[535px] w-full'>
-          <MarketSearch/>
+          <MarketSearch searchParams={searchParams}/>
           </div>
           <Link href={'/basket'} className='flex flex-col items-center transition-colors duration-300 text-h-grey hover:text-a-grey cursor-pointer'>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

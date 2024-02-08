@@ -15,13 +15,13 @@ export default function MarketFilters({searchParams}: any) {
     } else {
         params.delete(e.target.value)
     }
-    router.push(`/market?${params}`)
+    router.push(`/market?${params}`, {scroll: false})
   }
   return (
     <div>
         <div className='font-title font-semibold text-black mb-3'>Фильтры</div>
-        <Checkbox onChange={onChange} value={'sale'}>Лютые скидки</Checkbox>
-        <Checkbox onChange={onChange} value={'overprice'}>Лютыый оверпрайс</Checkbox>
+        <Checkbox onChange={onChange} checked={searchParams.sale} value={'sale'}>Лютые скидки</Checkbox>
+        <Checkbox onChange={onChange} checked={searchParams.overprice} value={'overprice'}>Лютыый оверпрайс</Checkbox>
     </div>
   )
 }

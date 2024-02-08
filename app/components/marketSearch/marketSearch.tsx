@@ -4,12 +4,22 @@ import { Input, ConfigProvider } from 'antd'
 import './style.css'
 import { useRouter } from 'next/navigation'
 
-export default function MarketSearch() {
+export default function MarketSearch({searchParams}: any) {
   const router = useRouter()
+  const onSearch = (value: any) => {
+    const params = new URLSearchParams()
+        Object.keys(searchParams).forEach((value: string) => {
+            searchParams[value] && value != 'take' && value != 'skip' ? params.append(value, searchParams[value]) : ''
+        })
+    if(value){
+        params.set( 'search' , value)
+    } else {
+        params.delete('search')
+    }
+    router.push(`/market?${params}`, {scroll: false})
+  }
   return (
-    <div onClick={()=>{
-      router.push('/market?take=10')
-    }} className='market-search max-w-[535px] w-full'>
+    <div className='market-search max-w-[535px] w-full'>
           <ConfigProvider
                         theme={{
                         token: {
@@ -25,7 +35,7 @@ export default function MarketSearch() {
                         }
                         }}
                     >
-              <Input.Search placeholder='Поиск товара' enterButton="Найти"/>
+              <Input.Search defaultValue={searchParams.search || ''} onSearch={onSearch} placeholder='Поиск товара' enterButton="Найти"/>
             </ConfigProvider>
     </div>
   )

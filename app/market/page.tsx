@@ -5,6 +5,7 @@ import MarketNavbar from '../components/marketNavbar/marketNavbar'
 import { ReadonlyURLSearchParams } from 'next/navigation'
 import { Pagination, ConfigProvider } from 'antd'
 import MarketSidebar from './marketSidebar/marketSidebar'
+import MarketPaginator from './marketPaginator/marketPaginator'
 type TypeMarket = {
   searchParams: Object
 }
@@ -23,11 +24,11 @@ const GetProducts = async (searchParams: any) => {
   return response
 }
 
-export default async function Market({searchParams}: TypeMarket) {
+export default async function Market({searchParams}: any) {
   const data = await GetProducts(searchParams)
   return (
     <>
-      <MarketNavbar/>
+      <MarketNavbar searchParams={searchParams}/>
       <MarketHero image_url='/market/asian-engineer-manufacturing-industrial-product-2022-09-27-18-03-21-utc 1.png'>
         <div className=' text-white font-title font-semibold text-xl'>
           <div className='mb-6'>Доставка промышленой техники для всех</div>
@@ -57,11 +58,7 @@ export default async function Market({searchParams}: TypeMarket) {
           <MarketProducts data={data}/>
         </div>
       </section>
-      <section className='py-6 lg:py-8'>
-        <div className='max-w-c-full m-auto px-6 lg:px-8 flex justify-center'>
-          <Pagination responsive={true} total={50} current={3} />
-        </div>
-      </section>
+      <MarketPaginator total={data.total} searchParams={searchParams}/>
       </ConfigProvider>
     </>
   )
