@@ -1,16 +1,19 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link';
+import './style.css'
 
 interface IMarketCardProps{
     img_url: string;
     title: string;
     price: number;
+    id: string
 }
 
-export default function MarketCard({img_url, title, price}:IMarketCardProps) {
+export default function MarketCard({img_url, title, price, id}:IMarketCardProps) {
   return (
-    <article>
-        <div className='relative h-[250px] rounded-2xl overflow-hidden after:block after:w-full after:h-full after:bg-[#00000020] after:absolute mb-5'>
+    <Link href={`/market/${id}`} className='product-card'>
+        <div className='product-img relative h-[250px] rounded-2xl overflow-hidden after:block after:w-full after:h-full after:absolute mb-5'>
             <Image className='w-full object-contain object-center' fill src={img_url} alt='product image' />
         </div>
         <div className=' font-text text-[black] font-semibold mb-1'>
@@ -24,6 +27,6 @@ export default function MarketCard({img_url, title, price}:IMarketCardProps) {
             {price}
              <span>P</span>
         </div>
-    </article>
+    </Link>
   )
 }

@@ -1,15 +1,77 @@
+'use client'
 import React from 'react'
-import Button from '../button/button'
+// import Button from '../button/button'
 import MarketSearch from '../marketSearch/marketSearch'
 import Link from 'next/link'
+import { Cascader, Button } from 'antd'
+import './style.css'
+
+const options = [
+  {
+    value: 'el',
+    label: 'Электротехника',
+    children: [
+      {
+        value: 'smart',
+        label: 'Смартфоны',
+        children: [
+          {
+            value: 'poco',
+            label: 'omagad POCO',
+          },
+          {
+            value: 'iphone',
+            label: 'Iphone',
+          },
+          {
+            value: 'xiomi',
+            label: 'Xiomi',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    value: 'bit',
+    label: 'Бытовая техника',
+    children: [
+      {
+        value: 'home',
+        label: 'Для дома',
+        children: [
+          {
+            value: 'tel',
+            label: 'Телевизоры',
+          },
+          {
+            value: 'hol',
+            label: 'Холодильники',
+          },
+          {
+            value: 'stir',
+            label: 'Стиральные машины',
+          },
+        ],
+      },
+      {
+        value: 'care',
+        label: 'Для здоровья',
+        children: [
+          {
+            value: 'tooth',
+            label: 'Зубные щетки',
+          },
+        ],
+      },
+    ],
+  },
+];
 
 export default function MarketNavbar({searchParams}: any) {
   return (
     <section className='py-6 lg:py-8 shadow-md border-bg-grey '>
         <div className='max-w-c-full m-auto flex items-center gap-[35px] justify-between px-6 lg:px-8'>
-          <Button className='px-7 py-2'>
-            <div className=' text-title font-semibold text-sm'>Каталог</div>
-          </Button>
+          <Cascader multiple options={options} className='katalog' style={{boxShadow: 'none'}} placeholder={'Каталог'}/>
           <div className='market-search max-w-[535px] w-full'>
           <MarketSearch searchParams={searchParams}/>
           </div>
