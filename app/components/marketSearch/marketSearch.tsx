@@ -19,7 +19,7 @@ export default function MarketSearch({searchParams}: any) {
     router.push(`/market?${params}`, {scroll: false})
   }
   return (
-    <div className='market-search max-w-[535px] w-full'>
+    <div className='market-search max-w-[535px] w-full md:max-w-[none]'>
           <ConfigProvider
                         theme={{
                         token: {

@@ -30,7 +30,7 @@ export default async function Market({searchParams}: any) {
     <>
       <MarketNavbar searchParams={searchParams}/>
       <MarketHero image_url='/market/asian-engineer-manufacturing-industrial-product-2022-09-27-18-03-21-utc 1.png'>
-        <div className=' text-white font-title font-semibold text-xl'>
+        <div className=' text-white font-title font-semibold text-xl md:text-lg'>
           <div className='mb-6'>Доставка промышленой техники для всех</div>
           <div>Скидка до 45%</div>
         </div>
@@ -53,7 +53,7 @@ export default async function Market({searchParams}: any) {
                         }}
                     >
       <section className='py-6 lg:py-8'>
-        <div className='relative max-w-c-full m-auto px-6 lg:px-8 grid grid-cols-[300px_1fr] gap-[25px]'>
+        <div className='relative max-w-c-full m-auto px-6 lg:px-8 grid grid-cols-[300px_1fr] gap-[25px] md:grid-cols-1'>
           <MarketSidebar searchParams={searchParams}/>
           <MarketProducts data={data}/>
         </div>
