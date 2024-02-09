@@ -17,7 +17,7 @@ export default function ShipmentForm() {
 
   return (
     <section className='sh-form'>
-        <div className='max-w-c-full m-auto py-[100px] px-6'>
+        <div className='max-w-c-full m-auto py-[100px] p-6 lg:px-8'>
           <h2 className='max-w-[520px] text-xl text-black font-title font-bold mb-5'>Заполните форму и мы с вами свяжемся</h2>
           <p className='text-title text-black font-semibold text-lg mb-[60px]'>Перед заполнением формы ознакомьтесь с тем, <Link href={'/shipment/network'} className=' text-red hover:text-light-red transition-colors duration-300'>где мы работаем <svg className='ml-2 inline-block relative bottom-[2px]' width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.5164 6.53033C17.8093 6.23744 17.8093 5.76256 17.5164 5.46967L12.7434 0.696699C12.4505 0.403806 11.9756 0.403806 11.6827 0.696699C11.3899 0.989593 11.3899 1.46447 11.6827 1.75736L15.9254 6L11.6827 10.2426C11.3899 10.5355 11.3899 11.0104 11.6827 11.3033C11.9756 11.5962 12.4505 11.5962 12.7434 11.3033L17.5164 6.53033ZM0 6.75H16.986V5.25H0V6.75Z" fill="currentColor"/></svg></Link></p>
           <ul className='flex gap-[60px] pb-9 border-b-[1px] border-[#00000030] mb-[25px] lg:flex-col'>

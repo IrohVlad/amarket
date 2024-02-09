@@ -5,8 +5,8 @@ import Advantages from "@/app/components/advantages/advantages";
 const About = () => {
     return (
         <div>
-            <div className="h-full flex flex-auto flex-col px-6 pt-9 pb-16 lg:pb-4 relative">
-                <div className="max-w-c-full w-full mx-auto flex flex-auto justify-between lg:flex-col">
+            <div className="h-full flex flex-auto flex-col relative">
+                <div className="max-w-c-full w-full mx-auto p-6 lg:px-8 flex flex-auto justify-between lg:flex-col">
                     <div className="w-1/2 pr-8 flex flex-col justify-between lg:w-full">
                         <div>
                             <span className="text-plus font-title font-semibold text-black">О компании</span>
