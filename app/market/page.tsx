@@ -20,7 +20,8 @@ const GetProducts = async (searchParams: any) => {
     params.append('skip', String(+searchParams.page * 9 - 9))
   }
   const response = await fetch(`http://147.45.110.102/api/v1/market?${params}`).then((data) => data.json())
-  console.log(response)
+
+  // console.log(response)
   return response
 }
 

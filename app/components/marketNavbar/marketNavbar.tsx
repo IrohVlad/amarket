@@ -2,6 +2,7 @@
 import React from 'react'
 import Button from '../button/button'
 import MarketSearch from '../marketSearch/marketSearch'
+import { DevicePhoneMobileIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { TreeSelect } from 'antd'
 import './style.css'
@@ -10,6 +11,7 @@ const options = [
   {
     value: 'el',
     title: 'Электротехника',
+    icon:  <DevicePhoneMobileIcon className='w-6 h-6'/>,
     children: [
       {
         value: 'smart',
@@ -77,7 +79,7 @@ export default function MarketNavbar({searchParams}: any) {
     <section className='py-6 lg:py-8 shadow-md border-bg-grey '>
         <div className='max-w-c-full m-auto px-6 lg:px-8'>
           <div className='flex items-center gap-[35px] justify-between'>
-            <TreeSelect  multiple treeCheckable={true} placeholder="Категории" treeData={options} dropdownStyle={{ maxHeight: 400, minWidth: 250, width: 'fit-content', overflowY: 'auto' }} style={{boxShadow: 'none', maxWidth: '300px', width: '100%'}}/>
+            <TreeSelect treeIcon={true} allowClear={true} placeholder="Категории" treeData={options} dropdownStyle={{ maxHeight: 400, minWidth: 250, width: 'fit-content', overflowY: 'auto' }} style={{boxShadow: 'none', maxWidth: '150px', width: '100%'}}/>
 
             <div className='market-search max-w-[535px] w-full md:!hidden'>
             <MarketSearch searchParams={searchParams}/>

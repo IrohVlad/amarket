@@ -1,5 +1,5 @@
 'use client'
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import {Checkbox } from 'antd'
 import { useRouter } from 'next/navigation'
 
@@ -18,7 +18,7 @@ export default function MarketFilters({searchParams}: any) {
     router.push(`/market?${params}`, {scroll: false})
   }
   return (
-    <div>
+    <div className='mb-5'>
         <div className='font-title font-semibold text-black mb-3'>Фильтры</div>
         <Checkbox onChange={onChange} checked={searchParams.sale} value={'sale'}>Лютые скидки</Checkbox>
         <Checkbox onChange={onChange} checked={searchParams.overprice} value={'overprice'}>Лютый оверпрайс</Checkbox>

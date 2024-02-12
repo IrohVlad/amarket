@@ -12,9 +12,9 @@ export default function MarketSearch({searchParams}: any) {
             searchParams[value] && value != 'take' && value != 'skip' ? params.append(value, searchParams[value]) : ''
         })
     if(value){
-        params.set( 'search' , value)
+        params.set( 'name' , value)
     } else {
-        params.delete('search')
+        params.delete('name')
     }
     router.push(`/market?${params}`, {scroll: false})
   }
@@ -35,7 +35,7 @@ export default function MarketSearch({searchParams}: any) {
                         }
                         }}
                     >
-              <Input.Search defaultValue={searchParams.search || ''} onSearch={onSearch} placeholder='Поиск товара' enterButton="Найти"/>
+              <Input.Search name='search' defaultValue={searchParams.search || ''} onSearch={onSearch} placeholder='Поиск товара' enterButton="Найти"/>
             </ConfigProvider>
     </div>
   )
