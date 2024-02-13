@@ -1,6 +1,6 @@
 'use client'
 import React, {useState, useEffect} from 'react'
-import {Slider, InputNumber } from 'antd'
+import {Slider, InputNumber, InputNumberProps } from 'antd'
 import { useRouter } from 'next/navigation'
 
 export default function MarketPriceRange({searchParams}: any) {
@@ -18,8 +18,8 @@ export default function MarketPriceRange({searchParams}: any) {
   return (
     <>
         <div className='flex justify-between'>
-                <InputNumber min={0} max={17000000} onChange={(value: any)=>{if(isNaN(value) || typeof value !== 'number'){ return }else{ setRange([value, range[1]])}}} value={typeof range[0] === 'number' ? range[0] : 0}/>
-                <InputNumber min={0} max={17000000} onChange={(value: any)=>{if(isNaN(value) || typeof value !== 'number'){ return }else{setRange([range[0], value])}}} value={typeof range[1] === 'number' ? range[1] : 0}/>
+                <InputNumber min={0} max={17000000} onChange={(value: number | null)=>{if(isNaN(Number(value)) || typeof value !== 'number'){ return }else{ setRange([value, range[1]])}}} value={typeof range[0] === 'number' ? range[0] : 0}/>
+                <InputNumber min={0} max={17000000} onChange={(value: number | null)=>{if(isNaN(Number(value)) || typeof value !== 'number'){ return }else{setRange([range[0], value])}}} value={typeof range[1] === 'number' ? range[1] : 0}/>
             </div>
             <Slider min={0} max={17000000} step={1} value={[range[0], range[1]]} onChange={setRange} range={{ draggableTrack: true }}/> 
     </>

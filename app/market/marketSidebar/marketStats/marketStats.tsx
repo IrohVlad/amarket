@@ -1,7 +1,16 @@
 import React from 'react'
 import MarketStat from './marketStat/marketStat'
 
-const data = [
+export interface IStatValue {
+    text: string;
+    value: string;
+}
+export interface IStat{
+    title: string;
+    values: IStatValue[]
+}
+
+const data: Array<IStat> = [
     {
         title: 'Встроенная память',
         values: [

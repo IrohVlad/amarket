@@ -2,10 +2,11 @@
 import React from 'react'
 import {Checkbox } from 'antd'
 import { useRouter } from 'next/navigation'
+import { CheckboxChangeEvent } from 'antd/es/checkbox'
 
 export default function MarketFilters({searchParams}: any) {
   const router = useRouter()
-  const onChange = (e: any) => {
+  const onChange = (e: CheckboxChangeEvent) => {
     const params = new URLSearchParams()
         Object.keys(searchParams).forEach((value: string) => {
             searchParams[value] && value != 'take' && value != 'skip' ? params.append(value, searchParams[value]) : ''

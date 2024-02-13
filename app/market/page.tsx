@@ -3,12 +3,9 @@ import MarketHero from '../components/marketHero/marketHero'
 import MarketProducts from './marketProducts/marketProducts'
 import MarketNavbar from '../components/marketNavbar/marketNavbar'
 import { ReadonlyURLSearchParams } from 'next/navigation'
-import { Pagination, ConfigProvider } from 'antd'
+import { ConfigProvider } from 'antd'
 import MarketSidebar from './marketSidebar/marketSidebar'
 import MarketPaginator from './marketPaginator/marketPaginator'
-type TypeMarket = {
-  searchParams: Object
-}
 
 const GetProducts = async (searchParams: any) => {
   const params = new URLSearchParams()
@@ -21,11 +18,11 @@ const GetProducts = async (searchParams: any) => {
   }
   const response = await fetch(`http://147.45.110.102/api/v1/market?${params}`).then((data) => data.json())
 
-  // console.log(response)
+  console.log(response)
   return response
 }
 
-export default async function Market({searchParams}: any) {
+export default async function Market({searchParams}: Record<'searchParams', ReadonlyURLSearchParams>) {
   const data = await GetProducts(searchParams)
   return (
     <>
