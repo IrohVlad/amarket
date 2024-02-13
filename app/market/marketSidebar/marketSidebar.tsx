@@ -3,6 +3,7 @@ import React from 'react'
 import MarketPriceRange from './marketPriceRange/marketPriceRange'
 import MarketFilters from './marketFilters/marketFilters'
 import MarketStats from './marketStats/marketStats'
+import MarketBrends from './marketBrends/marketBrends'
 import { ReadonlyURLSearchParams } from 'next/navigation'
 
 export default function MarketSidebar({searchParams}: Record<'searchParams', ReadonlyURLSearchParams>) {
@@ -11,6 +12,7 @@ export default function MarketSidebar({searchParams}: Record<'searchParams', Rea
             <MarketPriceRange searchParams={searchParams}/>
             <MarketFilters searchParams={searchParams}/>
             <MarketStats searchParams={searchParams}/>
+            <MarketBrends searchParams={searchParams}/>
     </div>
   )
 }

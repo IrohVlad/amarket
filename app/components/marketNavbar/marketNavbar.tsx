@@ -1,11 +1,9 @@
 'use client'
 import React from 'react'
-import Button from '../button/button'
 import MarketSearch from '../marketSearch/marketSearch'
-import { DevicePhoneMobileIcon } from '@heroicons/react/24/outline'
-import { ReadonlyURLSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { TreeSelect } from 'antd'
+import { useRouter } from 'next/navigation'
 import './style.css'
 
 const options = [
@@ -15,7 +13,7 @@ const options = [
     // icon:  <DevicePhoneMobileIcon className='w-6 h-6'/>,
     children: [
       {
-        value: 'smart',
+        value: 'Телефоны',
         label: 'Смартфоны',
         children: [
           {
@@ -75,12 +73,27 @@ const options = [
   
 ];
 
-export default function MarketNavbar({searchParams}: Record<'searchParams', ReadonlyURLSearchParams>) {
+
+
+export default function MarketNavbar({searchParams}: Record<'searchParams', any>) {
+  const router = useRouter()
+  const CategoryChange = (value: string) => {
+    const params = new URLSearchParams()
+        Object.keys(searchParams).forEach((value: string) => {
+            searchParams[value] && value != 'take' && value != 'skip' ? params.append(value, searchParams[value]) : ''
+        })
+      if(value){
+        params.set('category' , value)
+      } else {
+        params.delete('category')
+      }
+    router.push(`/market?${params}`, {scroll: false})
+  }
   return (
     <section className='py-6 lg:py-8 shadow-md border-bg-grey '>
         <div className='max-w-c-full m-auto px-6 lg:px-8'>
           <div className='flex items-center gap-[35px] justify-between'>
-            <TreeSelect treeIcon={true} allowClear={true} placeholder="Категории" treeData={options} dropdownStyle={{ maxHeight: 400, minWidth: 250, width: 'fit-content', overflowY: 'auto', }} style={{boxShadow: 'none', maxWidth: '150px', width: '100%'}}/>
+            <TreeSelect onChange={CategoryChange} treeIcon={true} allowClear={true} placeholder="Категории" treeData={options} dropdownStyle={{ maxHeight: 400, minWidth: 250, width: 'fit-content', overflowY: 'auto', }} style={{boxShadow: 'none', maxWidth: '150px', width: '100%'}}/>
 
             <div className='market-search max-w-[535px] w-full md:!hidden'>
             <MarketSearch searchParams={searchParams}/>
