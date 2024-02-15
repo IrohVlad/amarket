@@ -93,7 +93,7 @@ export default function MarketNavbar({searchParams}: Record<'searchParams', any>
     <section className='py-6 lg:py-8 shadow-md border-bg-grey '>
         <div className='max-w-c-full m-auto px-6 lg:px-8'>
           <div className='flex items-center gap-[35px] justify-between'>
-            <TreeSelect onChange={CategoryChange} treeIcon={true} allowClear={true} placeholder="Категории" treeData={options} dropdownStyle={{ maxHeight: 400, minWidth: 250, width: 'fit-content', overflowY: 'auto', }} style={{boxShadow: 'none', maxWidth: '150px', width: '100%'}}/>
+            <TreeSelect onChange={CategoryChange} defaultValue={searchParams.category} treeIcon={true} allowClear={true} placeholder="Категории" treeData={options} dropdownStyle={{ maxHeight: 400, minWidth: 250, width: 'fit-content', overflowY: 'auto', }} style={{boxShadow: 'none', maxWidth: '150px', width: '100%'}}/>
 
             <div className='market-search max-w-[535px] w-full md:!hidden'>
             <MarketSearch searchParams={searchParams}/>

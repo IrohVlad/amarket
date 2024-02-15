@@ -35,7 +35,7 @@ export default function MarketSearch({searchParams}: any) {
                         }
                         }}
                     >
-              <Input.Search name='search' defaultValue={searchParams.search || ''} onSearch={onSearch} placeholder='Поиск товара' enterButton="Найти"/>
+              <Input.Search name='search' defaultValue={searchParams.name || ''} onSearch={onSearch} placeholder='Поиск товара' enterButton="Найти"/>
             </ConfigProvider>
     </div>
   )

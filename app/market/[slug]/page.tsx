@@ -4,15 +4,17 @@ import Image from 'next/image'
 import Button from '@/app/components/button/button'
 import Link from 'next/link'
 import MarketProductContent from '../marketProductContent/marketProductContent'
+import ProductStats from './productStats/productStats'
 
 export default function Page({params, searchParams}: any) {
   return (
     <>
       <MarketNavbar searchParams={searchParams}/>
       <section className='py-6 lg:py-8'>
-        <div className='max-w-c-full m-auto p-7 lg:px-8 shadow-md rounded-[10px] border-[1px] border-[#D9D9D9]'>
-          <div className='grid grid-cols-[500px_1fr] gap-3 min-h-[500px] mb-20'>
-            <div className='relative'>
+        <div className='max-w-c-full m-auto px-7 lg:px-8'>
+        <div className=' p-7 lg:px-8 shadow-md rounded-[10px] border-[1px] border-[#D9D9D9] md:border-none md:p-0 md:shadow-none'>
+          <div className='grid grid-cols-[500px_1fr] gap-3 min-h-[500px] mb-20 lg:grid-cols-1'>
+            <div className='relative lg: min-h-[500px]'>
               <Image fill className='object-contain object-center' src='/market/phone.png' alt='product image' />
             </div>
             <div>
@@ -20,50 +22,47 @@ export default function Page({params, searchParams}: any) {
                 <Image height={45} width={45} className='mr-[10px]' src='/market/apple.svg' alt='brend icon'/>
                 Apple
               </div>
-              <div className='font-text text-black text-xl font-semibold mb-4'>
+              <h1 className='font-text text-black text-xl font-semibold mb-4 lg:text-[25px]'>
                 Смартфон Apple iPhone 15 Pro, 256 ГБ, (2 SIM), Blue Titanium
-              </div>
+              </h1>
               <div className='flex justify-between gap-3'>
                 <div>
                   <div className='font-text text-h-grey font-semibold mb-6'>
                     Цена:
-                    <div className='font-text text-black text-xl font-semibold'>
+                    <div className='font-text text-black text-xl font-semibold md:text-[25px]'>
                       95 000 <span>P</span>
                     </div>
                   </div>
-                  <ul className='mb-10'>
-                    <li className='mb-5'>
-                      <div className=' text-h-grey font-semibold font-text mb-2'>Тип SIM-карты: 2 SIM</div>
-                      <ul className='text-black font-medium font-text flex gap-2 flex-wrap'>
-                        <li className='px-5 py-1 border-[1px] rounded transition-colors duration-300 border-h-grey hover:border-red cursor-pointer'>2 SIM</li>
-                        <li className='px-5 py-1 border-[1px] rounded transition-colors duration-300 border-h-grey hover:border-red cursor-pointer'>eSIM+SIM</li>
-                      </ul>
-                    </li>
-                    <li className='mb-5'>
-                      <div className=' text-h-grey font-semibold font-text mb-2'>Встроенная память: 256 гб</div>
-                      <ul className='text-black font-medium font-text flex gap-2 flex-wrap'>
-                        <li className='px-5 py-1 border-[1px] rounded transition-colors duration-300 border-h-grey hover:border-red cursor-pointer'>128 гб</li>
-                        <li className='px-5 py-1 border-[1px] rounded transition-colors duration-300 border-h-grey hover:border-red cursor-pointer'>256 гб</li>
-                      </ul>
-                    </li>
-                  </ul>
-                  <Button className='py-3 px-10 min-w-[300px]'>
+                  <ProductStats/>
+                  <Button className='py-3 px-10 min-w-[300px] ss:min-w-0'>
                     <div className='font-text text-base text-center'>Добавить в корзину</div>
                   </Button>
                 </div>
-                <div className='py-[10px] px-[15px] rounded-[7px] bg-bg-grey max-w-[250px] w-full flex flex-col justify-between'>
+                <div className='py-[10px] px-[15px] rounded-[7px] bg-bg-grey max-w-[250px] w-full flex flex-col justify-between 2lg:hidden lg:flex md:hidden'>
                   <div>
                     <div className='text-sm font-text font-semibold text-black mb-2'>Характеристики</div>
                     <div className='text-black font-text text-sm leading-[26px]'>
                     Тип корпуса: классический <br/> Материал корпуса: титан<br/>Степень защиты: IP68<br/>Количество SIM-карт: 2<br/>Тип SIM-карты: nanoSim<br/>Вес: 187 г<br/>Размеры (ШxВxТ): 70.6x146.6x8.25 мм
                     </div>
                   </div>
-                  <Link className=' text-[#3891E3] font-text font-medium text-sm' href={'#'}>Все характеристики</Link>
+                  <a className=' text-[#3891E3] font-text font-medium text-sm' href='#stats'>Все характеристики</a>
                 </div>
               </div>
+              
             </div>
+            
           </div>
+          <div className='py-[10px] px-[15px] rounded-[7px] bg-bg-grey w-full hidden gap-6 flex-col justify-between 2lg:flex lg:hidden'>
+                  <div>
+                    <div className='text-sm font-text font-semibold text-black mb-2'>Характеристики</div>
+                    <div className='text-black font-text text-sm leading-[26px]'>
+                    Тип корпуса: классический <br/> Материал корпуса: титан<br/>Степень защиты: IP68<br/>Количество SIM-карт: 2<br/>Тип SIM-карты: nanoSim<br/>Вес: 187 г<br/>Размеры (ШxВxТ): 70.6x146.6x8.25 мм
+                    </div>
+                  </div>
+                  <a className=' text-[#3891E3] font-text font-medium text-sm' href='#stats'>Все характеристики</a>
+                </div>
           <MarketProductContent/>
+        </div>
         </div>
       </section>
     </>
