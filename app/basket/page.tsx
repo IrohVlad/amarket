@@ -52,7 +52,7 @@ export default function Basket({searchParams}: Record<'searchParams', any>) {
         <div className='max-w-c-full m-auto px-7 lg:px-8'>
         <div className=' p-7 lg:px-8 shadow-md rounded-[10px] border-[1px] border-[#D9D9D9] md:border-none md:p-0 md:shadow-none'>
           <div className=' text-black text-xl font-text after:block w-fit font-semibold after:bg-red after:h-[3px] after:w-full mb-5'>Ваш заказ</div>
-            <Table columns={columns} dataSource={data}/>
+            {/* <Table columns={columns} dataSource={data}/> */}
         </div>
         </div>
       </section>
