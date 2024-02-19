@@ -32,7 +32,8 @@ export default function Form() {
                                 <div className="text-[#6C6C6C] text-lg text-semibold">Номер телефона</div>
                             </div>
                             <div className=" font-bold 2lg:font-semibold 2xl:text-[18px] text-[28px]">
-                                (999) 555-01-03
+
+                                (995) 885-71-36
                             </div>
                         </li>
                         <li className=" mb-7 2lg:mb-0 sm:mb-5">

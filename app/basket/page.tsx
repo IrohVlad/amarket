@@ -2,7 +2,7 @@
 import React, {useState} from 'react'
 import MarketNavbar from '../components/marketNavbar/marketNavbar'
 import Image from 'next/image'
-import { Table } from 'antd'
+import { Table, ConfigProvider } from 'antd'
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
 import Button from '../components/button/button'
@@ -51,6 +51,23 @@ export default function Basket({searchParams}: Record<'searchParams', any>) {
         <div className='max-w-c-full m-auto px-7 lg:px-8'>
         <div className=' p-7 lg:px-8 shadow-md rounded-[10px] border-[1px] border-[#D9D9D9] md:border-none md:p-0 md:shadow-none'>
           <div className=' text-black text-xl font-text after:block w-fit font-semibold after:bg-red after:h-[3px] after:w-full mb-5'>Ваш заказ</div>
+          <ConfigProvider
+                        theme={{
+                        token: {
+                            // Seed Token
+                            // colorPrimary: 'gray'
+                            colorPrimary: '#AB3534'
+                        },
+                        components: {
+                            Select: {
+                            borderRadius: 0,
+                            },
+                            Checkbox: {
+                            colorPrimary: '#AB3534'
+                            }
+                        }
+                        }}
+                    >
             <Table dataSource={basket.map((value, index)=>{return {
               key: index,
               product: [ value.image, value.name],
@@ -87,6 +104,7 @@ export default function Basket({searchParams}: Record<'searchParams', any>) {
                 )
               }}/>
             </Table>
+            </ConfigProvider>
             <div className='bg-bg-grey rounded-xl px-[25px] py-5 max-w-[950px] mx-auto mt-[100px]'>
               <div className='flex items-center justify-between pb-[35px] border-b-[1px] border-a-grey'>
                 <div className='font-title font-medium text-base text-black'>Заказ на сумму</div>
