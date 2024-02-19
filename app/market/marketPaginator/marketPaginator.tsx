@@ -16,7 +16,7 @@ export default function MarketPaginator({searchParams, total}: any) {
   return (
     <section className='py-6 lg:py-8'>
         <div className='max-w-c-full m-auto px-6 lg:px-8 flex justify-center'>
-          <Pagination responsive={true} total={Math.ceil(total)} pageSize={9} showSizeChanger={false} onChange={SetPage} current={+searchParams.page || 1} />
+          <Pagination responsive={true} total={Math.ceil(total)} pageSize={30} showSizeChanger={false} onChange={SetPage} current={+searchParams.page || 1} />
         </div>
       </section>
   )

@@ -14,9 +14,9 @@ const GetProducts = async (searchParams: any) => {
   })
   params.append('take', '9')
   if('page' in searchParams){
-    params.append('skip', String(+searchParams.page * 9 - 9))
+    params.append('skip', String(+searchParams.page * 30 - 30))
   }
-  const response = await fetch(`http://147.45.110.102/api/v1/market?${params}`).then((data) => data.json())
+  const response = await fetch(`http://147.45.110.102/api/v1/market?${params}`, {next: {revalidate: 3000}}).then((data) => data.json())
 
   console.log(params)
   return response
@@ -56,7 +56,7 @@ export default async function Market({searchParams}: Record<'searchParams', Read
           <MarketProducts data={data}/>
         </div>
       </section>
-      <MarketPaginator total={data.total} searchParams={searchParams}/>
+      <MarketPaginator total={data.data.length} searchParams={searchParams}/>
       </ConfigProvider>
     </>
   )
