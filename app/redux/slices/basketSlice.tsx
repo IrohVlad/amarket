@@ -46,11 +46,23 @@ export const basketSlice = createSlice({
             localStorage.setItem('basket', JSON.stringify(state.value))
 
         },
+        increase: (state, action) => {
+            state.value[action.payload].amount += 1
+            localStorage.setItem('basket', JSON.stringify(state.value))
+        },
+        decrease: (state, action) => {
+            if(state.value[action.payload].amount > 1){
+                state.value[action.payload].amount -= 1
+            } else {
+                state.value = [...state.value.slice(0, action.payload), ...state.value.slice(action.payload + 1)]
+            }
+            localStorage.setItem('basket', JSON.stringify(state.value))
+        },
         setBasket: (state, action) => {
             state.value = action.payload
         }
     }
 })
 
-export const {addItems, setBasket} = basketSlice.actions
+export const {addItems, setBasket, increase, decrease} = basketSlice.actions
 export default basketSlice.reducer

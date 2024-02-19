@@ -1,20 +1,18 @@
 'use client'
-import React from 'react'
+import React, {useState} from 'react'
 import MarketNavbar from '../components/marketNavbar/marketNavbar'
-import Image from 'antd';
+import Image from 'next/image'
 import { Table } from 'antd'
+import { useSelector } from 'react-redux';
+import { RootState } from '../redux/store';
+import Button from '../components/button/button'
+import BasketMenu from './basketMenu/basketMenu'
 
 const columns = [
     {
       title: 'Товар',
       dataIndex: 'product',
-      key: 'product',
-      render: (_: any, {product}: any) => {(
-        <div className='flex items-center'>
-            <img src={product[0]} alt='product image' />
-            <div>{product[1]}</div>
-        </div>
-      )}
+      key: 'product'
     },
     {
       title: 'Цена, РУБ',
@@ -28,8 +26,8 @@ const columns = [
     },
     {
       title: 'Всего',
-      key: 'summ',
-      dataIndex: 'summ',
+      key: 'sum',
+      dataIndex: 'sum',
     }
   ];
 
@@ -43,8 +41,9 @@ const columns = [
       summ: '1'
     }
   ]
-
+  
 export default function Basket({searchParams}: Record<'searchParams', any>) {
+  const basket = useSelector((state: RootState) => state.basket.value)
   return (
     <>
       <MarketNavbar searchParams={searchParams}/>
@@ -52,7 +51,61 @@ export default function Basket({searchParams}: Record<'searchParams', any>) {
         <div className='max-w-c-full m-auto px-7 lg:px-8'>
         <div className=' p-7 lg:px-8 shadow-md rounded-[10px] border-[1px] border-[#D9D9D9] md:border-none md:p-0 md:shadow-none'>
           <div className=' text-black text-xl font-text after:block w-fit font-semibold after:bg-red after:h-[3px] after:w-full mb-5'>Ваш заказ</div>
-            {/* <Table columns={columns} dataSource={data}/> */}
+            <Table dataSource={basket.map((value, index)=>{return {
+              key: index,
+              product: [ value.image, value.name],
+              price: value.price,
+              count: value.amount,
+              sum: value.price * value.amount
+            }})}>
+              <Table.Column title="Товар" dataIndex='product' key='product'
+                render={(product) => {
+                  return(
+                  <div className='flex items-center'>
+                      <Image width={100} height={100} src={product[0]} alt='product image' />
+                      <div className='font-text text-black text-base'>{product[1]}</div>
+                  </div>
+                )}}
+              />
+              <Table.Column title="Цена, РУБ" dataIndex='price' key='price' 
+              render={(price)=>{
+                return(
+                  <div className='font-text font-bold text-base text-black'>{price}</div>
+                )
+              }}
+              />
+              <Table.Column title="Количество" dataIndex='count' key='count'
+              render={(count, _, index)=>{
+                return(
+                  <BasketMenu count={count} index={index} />
+                )
+              }} />
+              <Table.Column title="Всего" dataIndex='sum' key='sum' 
+              render={(sum)=>{
+                return(
+                  <div className='font-text font-bold text-base text-black'>{sum}</div>
+                )
+              }}/>
+            </Table>
+            <div className='bg-bg-grey rounded-xl px-[25px] py-5 max-w-[950px] mx-auto mt-[100px]'>
+              <div className='flex items-center justify-between pb-[35px] border-b-[1px] border-a-grey'>
+                <div className='font-title font-medium text-base text-black'>Заказ на сумму</div>
+                <div className='font-text font-semibold text-black font-base'>
+                  { basket.length && basket.reduce((sum, value)=> sum + value.price * value.amount, 0)}Р
+                </div>
+              </div>
+              <div className='flex items-center justify-between mt-[30px]'>
+                <div className='font-text font-bold text-black text-[24px]'>
+                  Всего
+                </div>
+                <div className='font-text font-bold text-black text-[24px]'>
+                { basket.length && basket.reduce((sum, value)=> sum + value.price * value.amount, 0)}Р
+                </div>
+              </div>
+              <Button className='py-2 px-[25px] mt-[100px] ml-auto'>
+                <div className='font-semibold font-title'>Оформить заказ</div>
+              </Button>
+            </div>
         </div>
         </div>
       </section>

@@ -97,7 +97,7 @@ export default function MarketNavbar({searchParams}: Record<'searchParams', any>
               <div className='font-title font-semibold md:hidden'>
               Корзина
               </div>
-              { basket.length > 0 && <div className='text-white bg-red font-title font-semibold p-[4px] leading-[7px] rounded-full absolute top-0 right-0 text-[12px] border-[3px] border-white'>{basket.length}</div>}
+              { basket.length > 0 && <div className='text-white bg-red font-title font-semibold p-[4px] leading-[7px] rounded-full absolute top-0 right-0 text-[12px] border-[3px] border-white'>{ basket.reduce((sum, value)=> sum + value.amount, 0)}</div>}
             </Link>
           </div>
           
