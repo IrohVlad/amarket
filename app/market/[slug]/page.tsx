@@ -5,8 +5,17 @@ import Button from '@/app/components/button/button'
 import Link from 'next/link'
 import MarketProductContent from '../marketProductContent/marketProductContent'
 import ProductStats from './productStats/productStats'
+import AddToBasketButton from './addToBasketButton/addToBasketButton'
 
-export default function Page({params, searchParams}: any) {
+const GetProduct = async (params: any) => {
+  const response = await fetch(`http://147.45.110.102/api/v1/market/${params.slug}`, {next: {revalidate: 3000}}).then((data) => data.json())
+
+  console.log(response)
+  return response
+}
+
+export default async function Page({params, searchParams}: any) {
+  const product = await GetProduct(params);
   return (
     <>
       <MarketNavbar searchParams={searchParams}/>
@@ -15,7 +24,7 @@ export default function Page({params, searchParams}: any) {
         <div className=' p-7 lg:px-8 shadow-md rounded-[10px] border-[1px] border-[#D9D9D9] md:border-none md:p-0 md:shadow-none'>
           <div className='grid grid-cols-[500px_1fr] gap-3 min-h-[500px] mb-20 lg:grid-cols-1'>
             <div className='relative lg: min-h-[500px]'>
-              <Image fill className='object-contain object-center' src='/market/phone.png' alt='product image' />
+              <Image fill className='object-contain object-center' src={product.pictureUrl} alt='product image' />
             </div>
             <div>
               <div className='flex items-center text-black font-text font-semibold text-[32px] mb-8'>
@@ -23,20 +32,18 @@ export default function Page({params, searchParams}: any) {
                 Apple
               </div>
               <h1 className='font-text text-black text-xl font-semibold mb-4 lg:text-[25px]'>
-                Смартфон Apple iPhone 15 Pro, 256 ГБ, (2 SIM), Blue Titanium
+                {product.name}
               </h1>
               <div className='flex justify-between gap-3'>
                 <div>
                   <div className='font-text text-h-grey font-semibold mb-6'>
                     Цена:
                     <div className='font-text text-black text-xl font-semibold md:text-[25px]'>
-                      95 000 <span>P</span>
+                      {product.price} <span>P</span>
                     </div>
                   </div>
                   <ProductStats/>
-                  <Button className='py-3 px-10 min-w-[300px] ss:min-w-0'>
-                    <div className='font-text text-base text-center'>Добавить в корзину</div>
-                  </Button>
+                  <AddToBasketButton id={product.id} name={product.name} price={product.price} image={product.pictureUrl} />
                 </div>
                 <div className='py-[10px] px-[15px] rounded-[7px] bg-bg-grey max-w-[250px] w-full flex flex-col justify-between 2lg:hidden lg:flex md:hidden'>
                   <div>
@@ -61,7 +68,7 @@ export default function Page({params, searchParams}: any) {
                   </div>
                   <a className=' text-[#3891E3] font-text font-medium text-sm' href='#stats'>Все характеристики</a>
                 </div>
-          <MarketProductContent/>
+          <MarketProductContent description={product.description}/>
         </div>
         </div>
       </section>

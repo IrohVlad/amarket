@@ -10,7 +10,7 @@ export interface IBasketItem {
 }
 
 export interface IBasketState {
-    value: Array<IBasketItem | null>
+    value: Array<IBasketItem>
 }
 
 const initialState: IBasketState = {
@@ -22,10 +22,35 @@ export const basketSlice = createSlice({
     initialState,
     reducers: {
         addItems: (state, action)=>{
-            state.value = [...state.value, ...action.payload]
+            const product = {
+                id: action.payload.id,
+                name: action.payload.name,
+                price: action.payload.price,
+                image: action.payload.image,
+                amount: 1
+            }
+            if(state.value.length > 0){
+                let alreadyExistIndex = state.value.findIndex((value)=>{
+                    return value.id == product.id 
+                })
+                if(alreadyExistIndex >= 0){
+                    state.value[alreadyExistIndex].amount += 1
+                
+                } else {
+                    state.value = [...state.value, product]
+                }
+            } else {
+                state.value = [...state.value, product]
+                
+            }
+            localStorage.setItem('basket', JSON.stringify(state.value))
+
+        },
+        setBasket: (state, action) => {
+            state.value = action.payload
         }
     }
 })
 
-export const {addItems} = basketSlice.actions
+export const {addItems, setBasket} = basketSlice.actions
 export default basketSlice.reducer

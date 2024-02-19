@@ -4,6 +4,9 @@ import MarketSearch from '../marketSearch/marketSearch'
 import Link from 'next/link'
 import { TreeSelect } from 'antd'
 import { useRouter } from 'next/navigation'
+import { useDispatch, useSelector } from 'react-redux'
+import { setBasket } from '@/app/redux/slices/basketSlice'
+import { RootState } from '@/app/redux/store'
 import './style.css'
 
 const options = [
@@ -14,25 +17,7 @@ const options = [
     children: [
       {
         value: 'Телефоны',
-        label: 'Смартфоны',
-        children: [
-          {
-            value: 'poco2',
-            label: 'omagad POCO',
-            children: [
-              {value: 'poco1',
-              label: 'Смартфоныsssssssssssssssssss',}
-            ]
-          },
-          {
-            value: 'iphone',
-            label: 'Iphone',
-          },
-          {
-            value: 'xiomi',
-            label: 'Xiomi',
-          },
-        ],
+        label: 'Смартфоны'
       },
     ],
   },
@@ -77,6 +62,11 @@ const options = [
 
 export default function MarketNavbar({searchParams}: Record<'searchParams', any>) {
   const router = useRouter()
+  const basket = useSelector((state: RootState)=> state.basket.value)
+  const dispatch = useDispatch()
+    React.useEffect(()=>{
+        dispatch(setBasket(localStorage.getItem('basket') ? JSON.parse(localStorage.getItem('basket') as any) : []))
+    },[])
   const CategoryChange = (value: string) => {
     const params = new URLSearchParams()
         Object.keys(searchParams).forEach((value: string) => {
@@ -98,7 +88,7 @@ export default function MarketNavbar({searchParams}: Record<'searchParams', any>
             <div className='market-search max-w-[535px] w-full md:!hidden'>
             <MarketSearch searchParams={searchParams}/>
             </div>
-            <Link href={'/basket'} className='flex flex-col items-center transition-colors duration-300 text-h-grey hover:text-a-grey cursor-pointer'>
+            <Link href={'/basket'} className='relative flex flex-col items-center transition-colors duration-300 text-h-grey hover:text-a-grey cursor-pointer'>
               <svg className='md:w-8 md:h-8' width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6.25 15C6.94036 15 7.5 15.5597 7.5 16.25C7.5 16.9403 6.94036 17.5 6.25 17.5C5.55964 17.5 5 16.9403 5 16.25C5 15.5597 5.55964 15 6.25 15Z" stroke="currentColor" stroke-width="1.5"/>
                 <path d="M13.75 15.0001C14.4403 15.0001 15 15.5597 15 16.2501C15 16.9405 14.4403 17.5001 13.75 17.5001C13.0597 17.5001 12.5 16.9405 12.5 16.2501C12.5 15.5597 13.0597 15.0001 13.75 15.0001Z" stroke="currentColor" stroke-width="1.5"/>
@@ -107,6 +97,7 @@ export default function MarketNavbar({searchParams}: Record<'searchParams', any>
               <div className='font-title font-semibold md:hidden'>
               Корзина
               </div>
+              { basket.length > 0 && <div className='text-white bg-red font-title font-semibold p-[4px] leading-[7px] rounded-full absolute top-0 right-0 text-[12px] border-[3px] border-white'>{basket.length}</div>}
             </Link>
           </div>
           
