@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link';
+import MarketInBasket from './marketInBasket.tsx/marketInBasket';
 import './style.css'
 
 interface IMarketCardProps{
@@ -20,12 +21,17 @@ export default function MarketCard({img_url, title, price, id}:IMarketCardProps)
             {title}
             
         </div> 
-        <div className='font-title text-h-grey font-semibold text-[12px]'>
-            Цена
-        </div>
-        <div className='font-text text-black font-semibold'>
-            {price}
-             <span>P</span>
+        <div className='flex justify-between items-center'>
+            <div>
+                <div className='font-title text-h-grey font-semibold text-[12px]'>
+                    Цена
+                </div>
+                <div className='font-text text-black font-semibold'>
+                    {price}
+                    <span>P</span>
+                </div>
+            </div>
+            <MarketInBasket id={id}/>
         </div>
     </Link>
   )

@@ -12,7 +12,7 @@ const GetProducts = async (searchParams: any) => {
   Object.keys(searchParams).forEach((value: string) => {
     searchParams[value] && value != 'take' && value != 'skip' ? params.append(value, searchParams[value]) : ''
   })
-  params.append('take', '9')
+  params.append('take', '30')
   if('page' in searchParams){
     params.append('skip', String(+searchParams.page * 30 - 30))
   }

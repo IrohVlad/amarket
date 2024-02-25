@@ -58,11 +58,14 @@ export const basketSlice = createSlice({
             }
             localStorage.setItem('basket', JSON.stringify(state.value))
         },
+        remove: (state, action) => {
+            state.value = [...state.value.slice(0, action.payload), ...state.value.slice(action.payload + 1)]
+        },
         setBasket: (state, action) => {
             state.value = action.payload
         }
     }
 })
 
-export const {addItems, setBasket, increase, decrease} = basketSlice.actions
+export const {addItems, setBasket, increase, decrease, remove} = basketSlice.actions
 export default basketSlice.reducer
