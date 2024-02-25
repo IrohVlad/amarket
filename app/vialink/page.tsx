@@ -4,9 +4,12 @@ import MarketHero from '../components/marketHero/marketHero'
 import Image from 'next/image'
 import MyButton from '../components/button/button'
 import { Form, Input, Button, ConfigProvider } from 'antd'
+import './style.css'
 
 export default function Vialink() {
     const [finish, setFinish] = useState<boolean>(false)
+    const [links, setLinks] = useState<Array<string>>([])
+    const [form] = Form.useForm()
   return (
     <>
         { !finish && <MarketHero image_url='/market/asian-engineer-manufacturing-industrial-product-2022-09-27-18-03-21-utc 1.png'>
@@ -22,7 +25,7 @@ export default function Vialink() {
                 <div className='font-title font-semibold text-black mb-4'>Как это работает?</div>
                 <p className='text-black font-title text-sm font-medium'>Lorem ipsum dolor sit amet consectetur. Eu pretium blandit viverra ac enim consectetur. Lacus nunc morbi hac felis elementum. Orci nunc sem feugiat vestibulum lacus ipsum in nisi quis. Aliquet dui posuere rhoncus pellentesque.</p>
             </div>
-            <div className='grid grid-cols-[1fr_400px] gap-[56px] mb-[100px]'>
+            <div className='grid grid-cols-[1fr_400px] gap-[56px] mb-[100px] lg:grid-cols-1'>
                 <div>
                     <ConfigProvider
                         theme={{
@@ -41,8 +44,8 @@ export default function Vialink() {
                         }
                         }}
                     >
-                    <Form className='flex items-center gap-5 mb-[87px]'>
-                        <Form.Item className='flex-1'>
+                    <Form form={form} className='flex items-center gap-5 mb-[87px] lg:mb-0' onFinish={(values) => {setLinks([...links, values.input]); form.resetFields()}}>
+                        <Form.Item rules={[{required: true, min: 5, message: 'Введите ссылку'}]} name='input' className='flex-1'>
                             <Input  />
                         </Form.Item>
                         <Form.Item>
@@ -53,17 +56,13 @@ export default function Vialink() {
                     </Form>
                     </ConfigProvider>
                     <ul className='text-sm font-title font-semibold text-black max-h-[300px] overflow-y-auto'>
-                        <li className='border-b-[1px] border-a-grey py-2 '>https://market.yandex.ru/?wprid=1700497018870132-13922797249754128780-vla1-2557-vla-l7-balancer-exp-8080-B</li>
-                        <li className='border-b-[1px] border-a-grey py-2 '>https://market.yandex.ru/?wprid=1700497018870132-13922797249754128780-vla1-2557-vla-l7-balancer-exp-8080-B</li>
-                        <li className='border-b-[1px] border-a-grey py-2 '>https://market.yandex.ru/?wprid=1700497018870132-13922797249754128780-vla1-2557-vla-l7-balancer-exp-8080-B</li>
-                        <li className='border-b-[1px] border-a-grey py-2 '>https://market.yandex.ru/?wprid=1700497018870132-13922797249754128780-vla1-2557-vla-l7-balancer-exp-8080-B</li>
-                        <li className='border-b-[1px] border-a-grey py-2 '>https://market.yandex.ru/?wprid=1700497018870132-13922797249754128780-vla1-2557-vla-l7-balancer-exp-8080-B</li>
-                        <li className='border-b-[1px] border-a-grey py-2 '>https://market.yandex.ru/?wprid=1700497018870132-13922797249754128780-vla1-2557-vla-l7-balancer-exp-8080-B</li>
-                        <li className='border-b-[1px] border-a-grey py-2 '>https://market.yandex.ru/?wprid=1700497018870132-13922797249754128780-vla1-2557-vla-l7-balancer-exp-8080-B</li>
-                        <li className='border-b-[1px] border-a-grey py-2 '>https://market.yandex.ru/?wprid=1700497018870132-13922797249754128780-vla1-2557-vla-l7-balancer-exp-8080-B</li>
+                        {links.map((value, index) => {
+                            return <li className='vialink border-b-[1px] border-a-grey py-2 relative flex items-center'><a className='' target='_blank' href={`${value}`}>{value}</a><Image onClick={()=>{setLinks([...links.slice(0, index), ...links.slice(index+1)])}} className='absolute right-[4px] hidden cursor-pointer bg-white' src='/market/trash.svg' height={20} width={20} alt='trash' /></li>
+                        })}
+                        
                     </ul>
                 </div>
-                <div className='bg-bg-grey rounded-[15px] p-[15px] flex flex-col'>
+                <div className='bg-bg-grey rounded-[15px] p-[15px] flex flex-col lg:hidden'>
                     <div className='font-semibold font-title text-black mb-4'>
                         С кем мы работаем?
                     </div>
