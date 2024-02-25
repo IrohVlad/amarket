@@ -57,7 +57,7 @@ export default function Vialink() {
                     </ConfigProvider>
                     <ul className='text-sm font-title font-semibold text-black max-h-[300px] overflow-y-auto'>
                         {links.map((value, index) => {
-                            return <li className='vialink border-b-[1px] border-a-grey py-2 relative flex items-center'><a className='' target='_blank' href={`${value}`}>{value}</a><Image onClick={()=>{setLinks([...links.slice(0, index), ...links.slice(index+1)])}} className='absolute right-[4px] hidden cursor-pointer bg-white' src='/market/trash.svg' height={20} width={20} alt='trash' /></li>
+                            return <li key={index} className='vialink border-b-[1px] border-a-grey py-2 relative flex items-center'><a className='' target='_blank' href={`${value}`}>{value}</a><Image onClick={()=>{setLinks([...links.slice(0, index), ...links.slice(index+1)])}} className='absolute right-[4px] hidden cursor-pointer bg-white' src='/market/trash.svg' height={20} width={20} alt='trash' /></li>
                         })}
                         
                     </ul>
